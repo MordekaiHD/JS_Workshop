@@ -9,17 +9,157 @@
 
 <body>
   <script>
-    const car = {
-      make: "Honda",
-      model: "Accord",
-      year: 2020,
-      color: "red",
-      power: "electric",
 
-    }
-    console.log(car);
-    
-    
+
+    // Задание 1 (тайминг 20 минут)
+    // Текст задания
+    // 1. Создайте объект с ключами от 1 до 7, в качестве
+    // значений содержащий имена дней недели. Выведите на
+    // экран “Вторник”
+
+    // const obj = {
+    //   Monday: 'Понидельник',
+    //   Tuesday: 'Вторник',
+    //   Wednesday: 'Среда',
+    //   Thursday: 'Четверг',
+    //   Friday: 'Пятница',
+    //   Saturday: 'Суббота',
+    //   Sunday: 'Воскресенье'
+    // }
+    // console.log(obj.Tuesday);
+
+    // 2. Создайте объект user с ключами 'name', 'surname', ‘age’.
+    // Выведите на экран фамилию, имя и возраст через дефис.
+
+    // const user = {
+    //   name: 'Evgeni',
+    //   surname: 'Pekshev',
+    //   age: 26
+    // }
+    // console.log(`${user.name} - ${user.surname} - ${user.age}`);
+
+    // 3. Добавьте в объект user свойство отчество, которое
+    // пользователь должен ввести с клавиатуры
+
+    // const user = {
+    //   name: 'Evgeni',
+    //   surname: 'Pekshev',
+    //   age: 26
+    // }
+    // let patronymic = prompt('Введите отчество');
+    // user.patronymic = patronymic;
+    // console.log(user);
+
+    // 4. Удалите свойство surname
+
+    // const user = {
+    //   name: 'Evgeni',
+    //   surname: 'Pekshev',
+    //   age: 26
+    // }
+
+    // delete user.surname;
+    // console.log(user);
+
+
+    // Задание 2 (тайминг 25 минут)
+    // 1. Даны два массива: первый с названиями дней недели, а второй - с
+    // их порядковыми номерами. С помощью цикла создайте объект, ключами которого будут
+    // названия дней, а значениями - их номера.
+
+    // const arr1 = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+    // const arr2 = [1, 2, 3, 4, 5, 6, 7];
+    // const obj = {};
+    // for (let i = 0; i < arr1.length; i++) {
+    //   obj[arr1[i]] = arr2[i];
+    // }
+    // console.log(obj);
+
+
+    // Переберите этот объект циклом и возведите каждый элемент
+    // этого объекта в квадрат.
+
+    // const object = { x: 1, y: 2, z: 3 };
+
+    // for (let key in object) {
+    //   if (object.hasOwnProperty(key)) {
+    //     object[key] = object[key] ** 2;
+    //   }
+    // }
+
+    // console.log(object); 
+
+
+    // Задание 3 (тайминг 15 минут)
+    // Найдите сумму элементов приведенного объекта.
+
+    // const obj = {
+    //   key1: {
+    //     key1: 1,
+    //     key2: 2,
+    //     key3: 3,
+    //   },
+    //   key2: {
+    //     key1: 4,
+    //     key2: 5,
+    //     key3: 6,
+    //   },
+    //   key3: {
+    //     key1: 7,
+    //     key2: 8,
+    //     key3: 9,
+    //   },
+    // }
+
+    // let sum = 0;
+
+    // for (let key in obj) {
+    //   for (let subKey in obj[key]) {
+    //     sum += obj[key][subKey];
+    //   }
+    // }
+
+    // console.log(sum);
+
+
+    // Задание 4 (тайминг 30 минут)
+    // 1. Создайте объект riddles
+    // 2. Добавьте свойства question, answer
+    // 3. создайте метод askQuestion который спрашивает у пользователя
+    // вопрос question и сравнивает ответ с answer
+    // 4. Если ответил неверно, то в консоль выводится текст: “вы
+    // проиграли”
+    // 5. * По желанию, создать 2 подсказки, если пользователь ответил неверно
+
+    // const riddles = {
+    //   question: 'Что может быть заполнено водой, но всегда остаётся пустым?',
+    //   answer: 'Сито',
+    //   hints: ['Используется на кухне для процеживания.", "Всё, что через него проходит, просачивается.'],
+    //   askQuestion: function () {
+    //     const userAnswer = prompt(this.question);
+    //     if (userAnswer.toLowerCase() === this.answer.toLowerCase()) {
+    //       console.log('Правильно!');
+    //     } else {
+    //       console.log('Вы проиграли');
+    //       const userAnswerSecondTry = prompt(this.hints[0]);
+    //       if (userAnswerSecondTry.toLowerCase() === this.answer.toLowerCase()) {
+    //         console.log('Правильно!');
+    //       } else {
+    //         console.log("Вы проиграли");
+    //         const userAnswerThirdTry = prompt(this.hints[1]);
+    //         if (userAnswerThirdTry.toLowerCase() === this.answer.toLowerCase()) {
+    //           console.log('Правильно!');
+    //         } else {
+    //           console.log('Вы проиграли');
+    //         }
+    //       }
+    //     }
+    //   }
+    // };
+
+    // riddles.askQuestion();
+
+
   </script>
 </body>
 
