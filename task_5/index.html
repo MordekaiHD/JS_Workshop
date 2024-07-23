@@ -10,154 +10,133 @@
 <body>
   <script>
 
-    // Задание 1 (тайминг 20 минут)
-    // Текст задания
-    // 1. Создайте объект с ключами от 1 до 7, в качестве
-    // значений содержащий имена дней недели. Выведите на
-    // экран “Вторник”
+    // Задание 1
+    // Дан объект numbers. Необходимо в консоль вывести все значения больше или равные 3.
 
-    // const obj = {
-    //   Monday: 'Понидельник',
-    //   Tuesday: 'Вторник',
-    //   Wednesday: 'Среда',
-    //   Thursday: 'Четверг',
-    //   Friday: 'Пятница',
-    //   Saturday: 'Суббота',
-    //   Sunday: 'Воскресенье'
-    // }
-    // console.log(obj.Tuesday);
+    const numbers = {
+      keyin1: 1,
+      keyin2: 2,
+      keyin3: 3,
+      keyin4: 4,
+      keyin5: 5,
+      keyin6: 6,
+      keyin7: 7,
+    }
 
-    // 2. Создайте объект user с ключами 'name', 'surname', ‘age’.
-    // Выведите на экран фамилию, имя и возраст через дефис.
+    const values = Object.values(numbers);
 
-    // const user = {
-    //   name: 'Evgeni',
-    //   surname: 'Pekshev',
-    //   age: 26
-    // }
-    // console.log(`${user.name} - ${user.surname} - ${user.age}`);
+    for (let i = 0; i < values.length; i++) {
+      if (values[i] >= 3) {
+        console.log(values[i]);
+      }
+    }
 
-    // 3. Добавьте в объект user свойство отчество, которое
-    // пользователь должен ввести с клавиатуры
+    // Задание 2
+    // Необходимо из объекта, который лежит в константе post вывести значения, к которым приписан комментарий, в консоль.
 
-    // const user = {
-    //   name: 'Evgeni',
-    //   surname: 'Pekshev',
-    //   age: 26
-    // }
-    // let patronymic = prompt('Введите отчество');
-    // user.patronymic = patronymic;
-    // console.log(user);
+    const post = {
+      author: "John", // вывести этот текст
+      postId: 23,
+      comments: [
+        {
+          userId: 10,
+          userName: "Alex",
+          text: "lorem ipsum",
+          rating: {
+            likes: 10,
+            dislikes: 2, // вывести это число
+          },
+        },
+        {
+          userId: 5, // вывести это число
+          userName: "Jane",
+          text: "lorem ipsum 2", // вывести этот текст
+          rating: {
+            likes: 3,
+            dislikes: 1,
+          },
+        },
+      ],
+    };
 
-    // 4. Удалите свойство surname
+    console.log(`Вывод => author: "${post.author}"`);
+    console.log(`Вывод dislikes первого комнтария => dislikes: ${post.comments[0].rating.dislikes}`);
+    console.log(`Вывод userId второго комментария => userId: ${post.comments[1].userId}`);
+    console.log(`Вывод text второго комментария => text: "${post.comments[1].text}"`);
 
-    // const user = {
-    //   name: 'Evgeni',
-    //   surname: 'Pekshev',
-    //   age: 26
-    // }
+    // Задание 3
+    // Дан массив productsShop, необходимо цену каждого продукта уменьшить на 15% используя метод forEach.
 
-    // delete user.surname;
-    // console.log(user);
+    const productsShop = [
+      {
+        id: 3,
+        price: 200,
+      },
+      {
+        id: 4,
+        price: 900,
+      },
+      {
+        id: 1,
+        price: 1000,
+      },
+    ];
 
+    productsShop.forEach(products => {
+      products.price *= 0.85;
+    });
 
-    // Задание 2 (тайминг 25 минут)
-    // 1. Даны два массива: первый с названиями дней недели, а второй - с
-    // их порядковыми номерами. С помощью цикла создайте объект, ключами которого будут
-    // названия дней, а значениями - их номера.
+    console.log(productsShop);
 
-    // const arr1 = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
-    // const arr2 = [1, 2, 3, 4, 5, 6, 7];
-    // const obj = {};
-    // for (let i = 0; i < arr1.length; i++) {
-    //   obj[arr1[i]] = arr2[i];
-    // }
-    // console.log(obj);
+    // Задание 4
+    // 1. Необходимо вывести в консоль массив продуктов в котором есть хоть одна фотография используя метод filter.Исходные данные - массив products.
+    // 2. Необходимо отсортировать массив products используя метод sort по цене, начиная с самой маленькой, заканчивая самой большой ценой, после чего вывести отсортированный массив в консоль.
 
+    const products = [
+      {
+        id: 3,
+        price: 127,
+        photos: [
+          "1.jpg",
+          "2.jpg",
+        ],
+      },
+      {
+        id: 5,
+        price: 499,
+        photos: [],
+      },
+      {
+        id: 10,
+        price: 26,
+        photos: [
+          "3.jpg",
+        ],
+      },
+      {
+        id: 8,
+        price: 78,
+      },
+    ];
 
-    // Переберите этот объект циклом и возведите каждый элемент
-    // этого объекта в квадрат.
+    const productsPhotos = products.filter(product => product.photos && product.photos.length > 0);
+    console.log(productsPhotos);
 
-    // const object = { x: 1, y: 2, z: 3 };
-
-    // for (let key in object) {
-    //   if (object.hasOwnProperty(key)) {
-    //     object[key] = object[key] ** 2;
-    //   }
-    // }
-
-    // console.log(object);
-
-
-    // Задание 3 (тайминг 15 минут)
-    // Найдите сумму элементов приведенного объекта.
-
-    // const obj = {
-    //   key1: {
-    //     key1: 1,
-    //     key2: 2,
-    //     key3: 3,
-    //   },
-    //   key2: {
-    //     key1: 4,
-    //     key2: 5,
-    //     key3: 6,
-    //   },
-    //   key3: {
-    //     key1: 7,
-    //     key2: 8,
-    //     key3: 9,
-    //   },
-    // }
-
-    // let sum = 0;
-
-    // for (let key in obj) {
-    //   for (let subKey in obj[key]) {
-    //     sum += obj[key][subKey];
-    //   }
-    // }
-
-    // console.log(sum);
+    console.log(productsPhotos.sort((a, b) => a.price - b.price));
 
 
-    // Задание 4 (тайминг 30 минут)
-    // 1. Создайте объект riddles
-    // 2. Добавьте свойства question, answer
-    // 3. создайте метод askQuestion который спрашивает у пользователя
-    // вопрос question и сравнивает ответ с answer
-    // 4. Если ответил неверно, то в консоль выводится текст: “вы
-    // проиграли”
-    // 5. * По желанию, создать 2 подсказки, если пользователь ответил неверно
+    // Задание 5
+    // Дано 2 массива
+    // Вам необходимо объединить 2 этих массива, чтобы значения первого массива были ключами, а значения второго массива — значениями.
 
-    // const riddles = {
-    //   question: 'Что может быть заполнено водой, но всегда остаётся пустым?',
-    //   answer: 'Сито',
-    //   hints: ['Используется на кухне для процеживания.", "Всё, что через него проходит, просачивается.'],
-    //   askQuestion: function () {
-    //     const userAnswer = prompt(this.question);
-    //     if (userAnswer.toLowerCase() === this.answer.toLowerCase()) {
-    //       console.log('Правильно!');
-    //     } else {
-    //       console.log('Вы проиграли');
-    //       const userAnswerSecondTry = prompt(this.hints[0]);
-    //       if (userAnswerSecondTry.toLowerCase() === this.answer.toLowerCase()) {
-    //         console.log('Правильно!');
-    //       } else {
-    //         console.log("Вы проиграли");
-    //         const userAnswerThirdTry = prompt(this.hints[1]);
-    //         if (userAnswerThirdTry.toLowerCase() === this.answer.toLowerCase()) {
-    //           console.log('Правильно!');
-    //         } else {
-    //           console.log('Вы проиграли');
-    //         }
-    //       }
-    //     }
-    //   }
-    // };
+    const en = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+    const ru = ["понедельник", "вторник", "среда", "четверг", "пятница", "суббота", "воскресенье"];
+    const result = {};
 
-    // riddles.askQuestion();
-
+    for (let i = 0; i < en.length; i++) {
+      result[en[i]] = ru[i];
+    }
+    console.log(result);
 
   </script>
 </body>
