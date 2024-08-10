@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .info__cats {
+      border: 1px solid;
+      padding: 5px;
+    }
+
+    .img {
+      width: 100px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="content"></div>
+
+  <script src="data.js"></script>
+  <script>
+
+    const data = JSON.parse(postsData);
+
+    const content = document.querySelector('.content');
+
+    data.forEach(element => {
+
+      const info__cats = document.createElement('div');
+      info__cats.classList.add('info__cats');
+      content.appendChild(info__cats);
+
+      const img = document.createElement('img');
+      img.classList.add('img');
+      img.src = element.img;
+      info__cats.appendChild(img);
+
+      const h3 = document.createElement('h3');
+      h3.classList.add('h3');
+      h3.textContent = element.h3;
+      info__cats.appendChild(h3);
+
+      const p = document.createElement('p');
+      p.classList.add('p');
+      p.textContent = element.p;
+      info__cats.appendChild(p);
+    });
+  </script>
+</body>
+
+</html>
