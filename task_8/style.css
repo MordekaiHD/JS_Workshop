@@ -210,20 +210,6 @@ body {
   position: relative;
 }
 
-.products__link {
-  transition: filter 0.5s;
-}
-
-.products__link:hover {
-  filter: brightness(50%);
-}
-
-.products__link:hover .img__cart {
-  display: block;
-  animation: slide-in-fwd-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-
-}
-
 .info__products {
   display: flex;
   flex-direction: column;
@@ -309,6 +295,11 @@ body {
 .text__section__footer {
   font-size: 14px;
   font-weight: 300;
+}
+
+.cart__Items {
+  display: none;
+  text-align: center;
 }
 
 .footer__info {
