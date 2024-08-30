@@ -1,91 +1,81 @@
 // Домашнее задание
 
-// Задание 1: "Управление персоналом компании"
 
-// Реализуйте класс Employee (сотрудник), который имеет следующие свойства и методы:
-// Свойство name (имя) - строка, имя сотрудника.
-// Метод displayInfo() - выводит информацию о сотруднике (имя).
+// ""Получение данных о пользователе""
 
-// Реализуйте класс Manager (менеджер), который наследует класс Employee и имеет дополнительное свойство и метод:
-// Свойство department (отдел) - строка, отдел, в котором работает менеджер.
-// Метод displayInfo() - переопределяет метод displayInfo() родительского класса и выводит информацию о менеджере (имя и отдел).
+// Реализуйте функцию getUserData, которая принимает идентификатор пользователя (ID) в качестве аргумента и использует fetch для получения данных о пользователе с заданным ID с удаленного сервера. Функция должна возвращать промис, который разрешается с данными о пользователе в виде объекта. Если пользователь с указанным ID не найден, промис должен быть отклонен с соответствующим сообщением об ошибке.
 
-class Employee {
-  constructor(name) {
-    this.name = name;
-  }
-  displayInfo() {
-    console.log(`Name: ${this.name}`);
-  }
-}
+// Подсказка, с последовательностью действий:
+// getUserData использует fetch для получения данных о пользователе с удаленного сервера. Если запрос успешен (с кодом 200), функция извлекает данные из ответа с помощью response.json() и возвращает объект с данными о пользователе. Если запрос неуспешен, функция отклоняет промис с сообщением об ошибке.
 
-class Manager extends Employee {
-  constructor(name, department) {
-    super(name);
-    this.department = department;
-  }
-  displayInfo() {
-    console.log(`Name: ${this.name}`);
-    console.log(`Department: ${this.department}`);
-  }
-}
-
-
-// Пример использования классов
-
-const employee = new Employee("John Smith");
-employee.displayInfo();
-// Вывод:
-// Name: John Smith
-
-const manager = new Manager("Jane Doe", "Sales");
-manager.displayInfo();
-// Вывод:
-// Name: Jane Doe
-// Department: Sales
-
-
-// Задание 2: "Управление списком заказов"
-
-// Реализуйте класс Order (заказ), который имеет следующие свойства и методы:
-// Свойство orderNumber (номер заказа) - число, уникальный номер заказа.
-// Свойство products (продукты) - массив, содержащий список продуктов в заказе.
-// Метод addProduct(product) - принимает объект product и добавляет его в список продуктов заказа.
-// Метод getTotalPrice() - возвращает общую стоимость заказа, основанную на ценах продуктов.
-
-class Product {
-  constructor(name, price) {
-    this.name = name;
-    this.price = price;
-  }
-}
-
-class Order {
-  constructor(orderNumber, products) {
-    this.orderNumber = orderNumber;
-    this.products = products;
-    this.inems = [];
-  }
-  addProduct(product) {
-    this.inems.push(product);
-  }
-  getTotalPrice() {
-    let totalPrice = 0;
-    for (let i = 0; i < this.inems.length; i++) {
-      totalPrice += this.inems[i].price;
+async function getUserData(id) {
+  try {
+    const response = await fetch(`/users/${id}`);
+    if (response.ok) {
+      const data = await response.json();
+      return data;
+    }else {
+      throw new Error('Пользователь не найден');
     }
-    return totalPrice
+  } catch (error) {
+    throw new Error(`Ошибка при получении данных о пользователе: ${error.message}`);
   }
 }
 
-// Пример использования класса
 
-const order = new Order(12345);
 
-const product1 = new Product("Phone", 500);
-order.addProduct(product1);
+// ""Отправка данных на сервер""
 
-const product2 = new Product("Headphones", 100);
-order.addProduct(product2);
+// Реализуйте функцию saveUserData, которая принимает объект с данными о пользователе в качестве аргумента и использует fetch для отправки этих данных на удаленный сервер для сохранения. Функция должна возвращать промис, который разрешается, если данные успешно отправлены, или отклоняется в случае ошибки.
 
-console.log(order.getTotalPrice()); // Вывод: 600
+// saveUserData использует fetch для отправки данных о пользователе на удаленный сервер для сохранения. Она отправляет POST-запрос на URL-адрес /users с указанием типа содержимого application/json и сериализует объект с данными о пользователе в JSON-строку с помощью JSON.stringify(). Если запрос успешен (с кодом 200), функция разрешает промис. Если запрос неуспешен, функция отклоняет промис с сообщени
+
+function saveUserData(userData) {
+  return fetch('/users', {
+    method: 'POST', 
+    headers: {
+      'Content-Type': 'application/json' 
+    },
+    body: JSON.stringify(userData) 
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Не удалось сохранить данные пользователя'); 
+    }
+    return response.json(); 
+  })
+  .catch(error => {
+    return Promise.reject(new Error(`Ошибка при сохранении данных: ${error.message}`));
+  });
+}
+
+// Пример использования функции
+
+const user = {
+  name: 'John Smith',
+  age: 30,
+  email: 'john@example.com'
+};
+
+saveUserData(user)
+.then(() => {
+  console.log('User data saved successfully');
+})
+.catch(error => {
+  console.log(error.message);
+});
+
+
+
+// ""Изменение стиля элемента через заданное время""
+
+// Напишите функцию changeStyleDelayed, которая принимает идентификатор элемента и время задержки (в миллисекундах) в качестве аргументов. Функция должна изменить стиль элемента через указанное время.
+
+function changeStyleDelayed(elementId, delay) {
+  setTimeout(() => {
+    document.getElementById(elementId).style.color = 'red';
+  }, delay);
+}
+
+// // Пример использования функции
+changeStyleDelayed('myElement', 2000); // Через 2 секунды изменяет стиль элемента с id 'myElement'"
