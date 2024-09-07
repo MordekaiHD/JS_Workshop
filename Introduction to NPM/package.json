@@ -1,0 +1,16 @@
+{
+  "name": "my-random-data-lib",
+  "version": "1.0.0",
+  "main": "JS.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/my-random-data-lib.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "A library for generating random names, numbers, and dates"
+}
