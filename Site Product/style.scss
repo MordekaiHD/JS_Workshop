@@ -83,7 +83,7 @@ a {
 
 .product {
   &__info {
-    // position:absolute;
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -173,7 +173,7 @@ a {
     grid-template-columns: repeat(3, 360px);
     gap: 30px;
     justify-content: center;
-    margin-top: 128px;
+    margin-top: 664px;
     margin-bottom: 128px;
   }
 
@@ -203,6 +203,99 @@ a {
       font-size: 16px;
       font-weight: 400;
       line-height: 19px;
+    }
+  }
+}
+
+.footer {
+  background-image: url('img/footer/background_photo.svg');
+  height: 448px;
+
+
+  &__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 350px;
+  }
+
+  &__top__info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 290px;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    margin-top: 97px;
+    margin-bottom: 166px;
+  }
+
+  &__top__email {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 155px;
+    position: relative;
+
+  }
+
+  &__top__email__dispatch {
+    margin-top: 26px;
+  }
+
+  &__top__email__input {
+    background: rgb(225, 225, 225);
+    border: none;
+    width: 323px;
+    height: 50px;
+    border-radius: 25px;
+    text-indent: 22px;
+
+  }
+
+  &__top__email__button {
+    background: rgb(241, 109, 127);
+    width: 100px;
+    height: 50px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border: none;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 74px;
+    right: 0;
+
+  }
+
+  &__bottom {
+    height: 80px;
+    background-color: black;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    &__text {
+      margin-left: 235px;
+      width: 332px;
+    }
+
+    &__pintaris {
+      margin-left: 733px;
+    }
+
+    &__twitter {
+      margin-left: 7px;
     }
   }
 }
