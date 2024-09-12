@@ -1,0 +1,369 @@
+$pinkColor: rgb(241, 109, 127);
+$blackColor: rgb(34, 34, 36);
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Lato", system-ui;
+  font-style: normal;
+}
+
+.header {
+  height: 75px;
+  background-color: $blackColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 860px;
+
+  &__nav__left {
+    display: flex;
+    gap: 41px;
+    align-items: baseline;
+  }
+
+  &__nav__right {
+    display: flex;
+    gap: 33px;
+    align-items: baseline;
+  }
+}
+
+.main__info {
+  display: flex;
+  align-items: center;
+  background: rgb(241, 228, 230);
+
+  .main__information {
+    border-left: $pinkColor 12px solid;
+    margin-left: 92px;
+  }
+
+  &__title {
+    font-size: 48px;
+    font-weight: 900;
+    padding-left: 16px;
+  }
+
+  &__text {
+    font-size: 32px;
+    font-weight: 700;
+    padding-left: 16px;
+  }
+
+  &__span {
+    font-size: 32px;
+    font-weight: 700;
+    color: $pinkColor;
+  }
+}
+
+.proposals {
+  display: flex;
+  gap: 30px;
+  margin-top: 65px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__women {
+    position: relative;
+  }
+
+  &__title__women {
+    position: absolute;
+    top: 108px;
+    left: 140px;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  &__text__women {
+    position: absolute;
+    top: 130px;
+    left: 100px;
+    color: $pinkColor;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__men {
+    position: relative;
+  }
+
+  &__title__men {
+    position: absolute;
+    top: 108px;
+    left: 140px;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  &__text__men {
+    position: absolute;
+    top: 130px;
+    left: 123px;
+    color: $pinkColor;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__kids {
+    position: relative;
+  }
+
+  &__title__kids {
+    position: absolute;
+    top: 108px;
+    left: 123px;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  &__text__kids {
+    position: absolute;
+    top: 130px;
+    left: 126px;
+    color: $pinkColor;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__accesores {
+    position: relative;
+  }
+
+  &__title__accesores {
+    position: absolute;
+    top: 65px;
+    left: 490px;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  &__text__accesores {
+    position: absolute;
+    top: 87px;
+    left: 494px;
+    color: $pinkColor;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+  }
+}
+
+.products {
+  &__title {
+    color: $blackColor;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 97px;
+  }
+
+  &__text {
+    color: rgb(159, 159, 159);
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 360px);
+    gap: 30px;
+    justify-content: center;
+  }
+
+  &__button {
+    border: 1px solid $pinkColor;
+    background-color: #fff;
+    width: 212px;
+    height: 48px;
+    color: $pinkColor;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 48px;
+    margin-left: 655px;
+  }
+}
+
+.products__items {
+  background: rgb(248, 248, 248);
+
+  &__info {
+    margin-top: 23px;
+    margin-right: 28px;
+    margin-left: 16px;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  &__text {
+    color: rgb(93, 93, 93);
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 12px;
+    margin-bottom: 18px;
+  }
+
+  &__price {
+    color: $pinkColor;
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
+.feature {
+  margin-top: 95px;
+  height: 341px;
+  background-color: rgb(34, 34, 36);
+  color: #fff;
+  display: grid;
+  grid-template-columns: repeat(3, 360px);
+  justify-content: center;
+  align-content: center;
+  align-items: baseline;
+  gap: 30px;
+
+  &__delivery {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+  }
+
+  &__machine__title {
+    font-size: 19.96px;
+    font-weight: 400;
+  }
+
+  &__machine__text {
+    font-size: 13.97px;
+    font-weight: 300;
+    text-align: center;
+  }
+}
+
+
+
+.footer {
+  position: relative;
+
+  &__img {
+    width: 100%;
+    display: flex;
+  }
+
+  &__left {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    width: 359.45px;
+    height: 225px;
+    left: 230.29px;
+    right: 1010.26px;
+    top: 97px;
+    bottom: 126px;
+    color: $blackColor;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: 400;
+    gap: 20px;
+  }
+
+  &__right {
+    position: absolute;
+    width: 557px;
+    height: 142px;
+    left: 813px;
+    right: 230px;
+    top: 150px;
+    bottom: 156px;
+    text-align: center;
+
+    &__title {
+      color: $blackColor;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    &__text {
+      margin-top: 5px;
+      color: $blackColor;
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    &__input {
+      position: relative;
+      width: 207px;
+      height: 50px;
+      margin-top: 32px;
+      margin-right: 97px;
+      background: rgb(225, 225, 225);
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+      border: none;
+      padding-left: 22px;
+      padding-right: 14px;
+    }
+
+    &__button {
+      position: absolute;
+      top: 88px;
+      right: 105px;
+      border: none;
+      background-color: $pinkColor;
+      font-size: 14px;
+      font-weight: 400;
+      color: #fff;
+      width: 100px;
+      height: 49px;
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    height: 79px;
+    background-color: rgb(34, 34, 36);
+    color: #fff;
+    gap: 655px;
+    justify-content: center;
+  }
+
+  &__bottom__text {
+    width: 332px;
+  }
+
+  &__bottom__right {
+    display: flex;
+    gap: 7px;
+  }
+}
