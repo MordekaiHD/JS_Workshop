@@ -22,8 +22,40 @@
           alt="logo"></a>
     </div>
     <div class="header__nav__right">
-      <a href="#" class="header__nav__right__menu"><img src="img/header/header__nav/header__nav__right/menu.svg"
-          alt="menu"></a>
+      <input type="checkbox" id="checkbox">
+      <label for="checkbox">
+        <img src="img/header/header__nav/header__nav__right/menu.svg" alt="menu">
+      </label>
+      <div class="header__menu">
+        <h2 class="header__title">MENU</h2>
+        <div class="header__man">
+          <h3 class="header__subtitle">MAN</h3>
+          <ul class="header__ul">
+            <li class="header__li"><a class="header__link" href="#">Accessories</a></li>
+            <li class="header__li"><a class="header__link" href="#">Bags</a></li>
+            <li class="header__li"><a class="header__link" href="#">Denim</a></li>
+            <li class="header__li"><a class="header__link" href="#">T-Shirts</a></li>
+          </ul>
+        </div>
+        <div class="header__man">
+          <h3 class="header__subtitle">WOMAN</h3>
+          <ul class="header__ul">
+            <li class="header__li"><a class="header__link" href="#">Accessories</a></li>
+            <li class="header__li"><a class="header__link" href="#">Bags</a></li>
+            <li class="header__li"><a class="header__link" href="#">Denim</a></li>
+            <li class="header__li"><a class="header__link" href="#">T-Shirts</a></li>
+          </ul>
+        </div>
+        <div class="header__man">
+          <h3 class="header__subtitle">KIDS</h3>
+          <ul class="header__ul">
+            <li class="header__li"><a class="header__link" href="#">Accessories</a></li>
+            <li class="header__li"><a class="header__link" href="#">Bags</a></li>
+            <li class="header__li"><a class="header__link" href="#">Denim</a></li>
+            <li class="header__li"><a class="header__link" href="#">T-Shirts</a></li>
+          </ul>
+        </div>
+      </div>
       <a href="#" class="header__nav__right__accaunt"><img src="img/header/header__nav/header__nav__right/accaunt.svg"
           alt="accaunt"></a>
       <a href="#" class="header__nav__right__basket"><img src="img/header/header__nav/header__nav__right/basket.svg"
@@ -59,7 +91,6 @@
         <p class="proposals__title__accesores">LUXIROUS & TRENDY</p>
         <p class="proposals__text__accesores">ACCESORIES</p>
       </div>
-
     </div>
     <div class="products">
       <h2 class="products__title">Fetured Items</h2>
@@ -141,20 +172,23 @@
             with extensive models.</p>
         </div>
       </div>
-    </div>  
+    </div>
   </main>
   <footer class="footer">
     <img src="img/footer/background.svg" alt="background" class="footer__img">
     <div class="footer__left">
       <img src="img/footer/foto.svg" alt="foto" class="footer__left__img">
-      <p class="footer__left__text">&laquo;Vestibulum quis porttitor dui! Quisque viverra nunc&nbsp;mi, a&nbsp;pulvinar
-        purus condimentum&raquo;</p>
+      <p class="footer__left__text">&laquo;Vestibulum quis porttitor dui! Quisque viverra nunc&nbsp;mi,<span
+          class="footer__left__span"> a&nbsp;pulvinar purus condimentum&raquo;</span>
+      </p>
     </div>
     <div class="footer__right">
       <h2 class="footer__right__title">SUBSCRIBE</h2>
       <p class="footer__right__text">FOR OUR NEWLETTER AND PROMOTION</p>
-      <input type="email" placeholder="Enter Your Email" class="footer__right__input">
-      <button class="footer__right__button" type="submit">Subscribe</button>
+      <form class="footer__right__form">
+        <input type="email" placeholder="Enter Your Email" class="footer__right__input">
+        <button class="footer__right__button" type="submit">Subscribe</button>
+      </form>
     </div>
     <div class="footer__bottom">
       <p class="footer__bottom__text">© 2023 Brand All Rights Reserved.</p>

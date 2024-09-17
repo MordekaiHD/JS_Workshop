@@ -21,7 +21,6 @@ body {
   justify-content: center;
   gap: 860px;
 
-
   &__nav__left {
     display: flex;
     gap: 41px;
@@ -34,6 +33,7 @@ body {
     align-items: baseline;
   }
 }
+
 
 .header__menu {
   box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
@@ -87,187 +87,144 @@ body {
   right: 0;
 }
 
-.main__info {
+.main__top {
   display: flex;
   align-items: center;
-  background: rgb(241, 228, 230);
-
-
-  .main__information {
-    border-left: $pinkColor 12px solid;
-    margin-left: 92px;
-  }
-
-  &__title {
-    font-size: 48px;
-    font-weight: 900;
-    padding-left: 16px;
-  }
-
-  &__text {
-    font-size: 32px;
-    font-weight: 700;
-    padding-left: 16px;
-  }
-
-  &__span {
-    font-size: 32px;
-    font-weight: 700;
-    color: $pinkColor;
-  }
-}
-
-.proposals {
-  display: flex;
-  gap: 30px;
-  margin-top: 65px;
-  flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
+  height: 148px;
+  background: rgb(248, 243, 244);
 
-  &__women {
-    position: relative;
-  }
-
-  &__title__women {
-    position: absolute;
-    top: 108px;
-    left: 140px;
-    color: #FFFFFF;
-    font-size: 16px;
-    font-weight: 400;
-    text-align: center;
-  }
-
-  &__text__women {
-    position: absolute;
-    top: 130px;
-    left: 100px;
+  &__title {
+    padding-right: 755px;
     color: $pinkColor;
     font-size: 24px;
-    font-weight: 700;
-    text-align: center;
-  }
-
-  &__men {
-    position: relative;
-  }
-
-  &__title__men {
-    position: absolute;
-    top: 108px;
-    left: 140px;
-    color: #FFFFFF;
-    font-size: 16px;
     font-weight: 400;
-    text-align: center;
   }
 
-  &__text__men {
-    position: absolute;
-    top: 130px;
-    left: 123px;
-    color: $pinkColor;
-    font-size: 24px;
+  &__link {
+    text-decoration: none;
+    color: rgb(99, 99, 99);
+    font-size: 14px;
+    font-weight: 300;
+    padding-right: 5px;
+  }
+
+  &__color__link {
+    text-decoration: none;
+    font-size: 14px;
     font-weight: 700;
-    text-align: center;
-  }
-
-  &__kids {
-    position: relative;
-  }
-
-  &__title__kids {
-    position: absolute;
-    top: 108px;
-    left: 123px;
-    color: #FFFFFF;
-    font-size: 16px;
-    font-weight: 400;
-    text-align: center;
-  }
-
-  &__text__kids {
-    position: absolute;
-    top: 130px;
-    left: 126px;
-    color: $pinkColor;
-    font-size: 24px;
-    font-weight: 700;
-    text-align: center;
-  }
-
-  &__accesores {
-    position: relative;
-  }
-
-  &__title__accesores {
-    position: absolute;
-    top: 65px;
-    left: 490px;
-    color: #FFFFFF;
-    font-size: 16px;
-    font-weight: 400;
-    text-align: center;
-  }
-
-  &__text__accesores {
-    position: absolute;
-    top: 87px;
-    left: 494px;
-    color: $pinkColor;
-    font-size: 24px;
-    font-weight: 700;
-    text-align: center;
+    color: rgb(241, 109, 127);
   }
 }
 
-.products {
-  &__title {
-    color: $blackColor;
-    font-size: 30px;
-    font-weight: 400;
-    text-align: center;
-    margin-top: 97px;
+.main__filter {
+  padding: 57px 583px 57px;
+  position: relative;
+
+  &__extensive {
+    &__details {
+      position: absolute;
+      top: 44px;
+      left: 180px;
+
+
+      &[open] {
+        color: $pinkColor;
+        box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
+        background: rgb(255, 255, 255);
+        width: 370px;
+      }
+
+      &[open] path {
+        fill: $pinkColor;
+      }
+    }
+
+    &__summary {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      padding-top: 13px;
+      margin-left: 16px;
+    }
+
+    &__category {
+      margin: 13px 17px 14px;
+      font-size: 14px;
+      font-weight: 400;
+      width: 327px;
+
+      &__summary {
+        display: flex;
+        border-left: 5px solid;
+        border-bottom: 1px solid rgb(235, 235, 235);
+        padding: 8px 11px 12px;
+      }
+
+      &__text {
+        padding: 24px 17px 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+      }
+
+      &__link {
+        color: rgb(111, 110, 110);
+        font-size: 14px;
+        font-weight: 400;
+        text-decoration: none;
+      }
+    }
   }
 
-  &__text {
-    color: rgb(159, 159, 159);
+
+  &__sort {
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+    color: rgb(111, 110, 110);
     font-size: 14px;
     font-weight: 400;
-    text-align: center;
-    margin-bottom: 48px;
-  }
 
-  &__list {
-    display: grid;
-    grid-template-columns: repeat(3, 360px);
-    gap: 30px;
-    justify-content: center;
-  }
+    &__details {
+      position: relative;
+    }
 
-  &__button {
-    border: 1px solid $pinkColor;
-    background-color: #fff;
-    width: 212px;
-    height: 48px;
-    color: $pinkColor;
-    font-size: 16px;
-    font-weight: 400;
-    margin-top: 48px;
-    margin-left: 655px;
-    transition: all 0.5s ease;
-  }
+    &__summary {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-  &__button:hover {
-    border: 1px solid rgb(255, 106, 106);
-    background: rgb(241, 109, 127);
-    color: #fff;
-  }
+    &__details__box {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
+      background: rgb(255, 255, 255);
+      box-sizing: border-box;
+      padding: 7px 9px 11px;
+      width: 79px;
+      gap: 6px;
+      top: 20px;
+      left: -6px;
+    }
 
-  &__button:active {
-    transform: scale(0.95);
+    &__details__lable {
+      display: flex;
+      gap: 10px;
+    }
   }
+}
+
+.products__list {
+  display: grid;
+  grid-template-columns: repeat(3, 360px);
+  gap: 30px;
+  justify-content: center;
 }
 
 .products__items {
@@ -300,7 +257,39 @@ body {
   }
 }
 
-.feature {
+.pagination__section {
+  margin-left: 644px;
+  margin-top: 48px;
+  border: 1px solid rgb(235, 235, 235);
+  width: 283px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  &__left {
+    padding-right: 16px;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgb(196, 196, 196);
+  }
+
+  &__link:hover {
+    color: $pinkColor;
+  }
+
+  &__right {
+    padding-left: 16px;
+  }
+
+}
+
+.main__feature {
   margin-top: 95px;
   height: 341px;
   background-color: rgb(34, 34, 36);
