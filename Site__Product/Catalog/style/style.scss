@@ -34,7 +34,6 @@ body {
   }
 }
 
-
 .header__menu {
   box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
   background: rgb(255, 255, 255);
@@ -107,13 +106,24 @@ body {
     font-size: 14px;
     font-weight: 300;
     padding-right: 5px;
+    
   }
 
-  &__color__link {
+
+  &__box:last-of-type &__link {
     text-decoration: none;
     font-size: 14px;
     font-weight: 700;
-    color: rgb(241, 109, 127);
+    color: rgb(241, 109, 127);    
+  }
+
+  &__box:not(:last-child)::after {
+    content: '/';
+    padding-left: 8px;
+    padding-right: 8px;
+    color: rgb(99, 99, 99);
+    font-size: 14px;
+    font-weight: 300;
   }
 }
 

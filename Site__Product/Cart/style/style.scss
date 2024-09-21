@@ -1,0 +1,224 @@
+$pinkColor: rgb(241, 109, 127);
+$blackColor: rgb(34, 34, 36);
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Lato", system-ui;
+  font-style: normal;
+  overflow-x: hidden;
+}
+
+.header {
+  position: relative;
+  height: 75px;
+  background-color: $blackColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 860px;
+
+  &__nav__left {
+    display: flex;
+    gap: 41px;
+    align-items: baseline;
+  }
+
+  &__nav__right {
+    display: flex;
+    gap: 33px;
+    align-items: baseline;
+  }
+}
+
+.header__menu {
+  box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
+  background: rgb(255, 255, 255);
+  width: 232px;
+  position: absolute;
+  top: 75px;
+  right: -232px;
+  transition: right 0.5s;
+}
+
+.header__title {
+  padding: 37px 34px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17px;
+}
+
+.header__man {
+  padding-left: 33px;
+}
+
+.header__subtitle {
+  color: $pinkColor;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.header__ul {
+  padding: 12px 22px 20px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.header__link {
+  text-decoration: none;
+  color: rgb(111, 110, 110);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+}
+
+#checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+
+#checkbox:checked~.header__menu {
+  right: 0;
+}
+
+.main__top {
+  display: flex;
+  align-items: center;
+  height: 148px;
+  background: rgb(248, 243, 244);
+
+  &__title {
+    color: $pinkColor;
+    font-size: 24px;
+    font-weight: 400;
+    margin-left: 200px;
+  }
+}
+
+.footer {
+  position: relative;
+
+  &__img {
+    width: 100%;
+    display: flex;
+  }
+
+  &__left {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    width: 359.45px;
+    height: 225px;
+    left: 230.29px;
+    right: 1010.26px;
+    top: 97px;
+    bottom: 126px;
+    color: $blackColor;
+    font-size: 20px;
+    font-weight: 400;
+    gap: 20px;
+
+    &__span {
+      font-style: italic;
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
+
+  &__right {
+    position: absolute;
+    width: 557px;
+    height: 142px;
+    left: 813px;
+    right: 230px;
+    top: 150px;
+    bottom: 156px;
+    text-align: center;
+
+    &__title {
+      color: $blackColor;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    &__text {
+      margin-top: 5px;
+      color: $blackColor;
+      font-size: 18px;
+      font-weight: 400;
+
+    }
+
+    &__input {
+      position: relative;
+      width: 210px;
+      height: 50px;
+      margin-top: 32px;
+      margin-right: 97px;
+      background: rgb(225, 225, 225);
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+      border: none;
+      padding-left: 22px;
+      padding-right: 14px;
+    }
+
+    &__input:focus {
+      outline: none;
+    }
+
+    &__button {
+      position: absolute;
+      top: 88px;
+      right: 105px;
+      border: none;
+      background-color: $pinkColor;
+      font-size: 14px;
+      font-weight: 400;
+      color: #fff;
+      width: 100px;
+      height: 49px;
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
+    }
+
+    &__button:active {
+      transform: scale(0.95);
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    height: 79px;
+    background-color: rgb(34, 34, 36);
+    color: #fff;
+    gap: 655px;
+    justify-content: center;
+  }
+
+  &__bottom__text {
+    width: 332px;
+  }
+
+  &__bottom__right {
+    display: flex;
+    gap: 7px;
+
+    &__link {
+      transition: all 0.5s ease;
+    }
+
+    &__link:hover {
+      transform: scale(1.15);
+    }
+  }
+}
