@@ -18,63 +18,87 @@ body {
   background-color: $blackColor;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 860px;
 
   &__nav__left {
     display: flex;
     gap: 41px;
     align-items: baseline;
+    padding-left: 230px;
+    margin-right: 860px;
+
+    &__link {
+      path {
+        transition: fill 0.3s ease;
+      }
+
+      &:hover {
+        path {
+          fill: $pinkColor;
+        }
+      }
+    }
   }
 
   &__nav__right {
     display: flex;
     gap: 33px;
     align-items: baseline;
+
+    &__svg {
+      path {
+        transition: fill 0.3s ease;
+      }
+
+      &:hover {
+        path {
+          fill: $pinkColor;
+        }
+      }
+    }
   }
-}
 
-.header__menu {
-  box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
-  background: rgb(255, 255, 255);
-  width: 232px;
-  position: absolute;
-  top: 75px;
-  right: -232px;
-  transition: right 0.5s;
-}
+  &__menu {
+    box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
+    background: rgb(255, 255, 255);
+    width: 232px;
+    position: absolute;
+    top: 75px;
+    right: -232px;
+    transition: right 0.5s;
 
-.header__title {
-  padding: 37px 34px 24px;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 17px;
-}
+    .header__title {
+      padding: 37px 34px 24px;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 17px;
+    }
 
-.header__man {
-  padding-left: 33px;
-}
+    .header__man {
+      padding-left: 33px;
 
-.header__subtitle {
-  color: $pinkColor;
-  font-size: 14px;
-  font-weight: 400;
-}
+      &__subtitle {
+        color: $pinkColor;
+        font-size: 14px;
+        font-weight: 400;
+      }
 
-.header__ul {
-  padding: 12px 22px 20px;
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  gap: 11px;
-}
+      &__ul {
+        padding: 12px 22px 20px;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+      }
 
-.header__link {
-  text-decoration: none;
-  color: rgb(111, 110, 110);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 17px;
+      &__link {
+        text-decoration: none;
+        color: rgb(111, 110, 110);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+      }
+    }
+  }
 }
 
 #checkbox {
@@ -96,7 +120,271 @@ body {
     color: $pinkColor;
     font-size: 24px;
     font-weight: 400;
-    margin-left: 200px;
+    margin-left: 230px;
+  }
+}
+
+.cart {
+  display: flex;
+  flex-direction: row;
+  gap: 128px;
+
+  &__product {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 94px 0 74px 230px;
+
+    &__item {
+      display: flex;
+      width: 652px;
+      box-shadow: 17px 19px 24px 0px rgba(0, 0, 0, 0.13);
+
+      &__info {
+        display: flex;
+        flex-direction: column;
+        padding: 22px 31px 62px;
+      }
+
+      &__title {
+        padding-bottom: 42px;
+        color: rgb(34, 34, 34);
+        font-size: 24px;
+        font-weight: 400;
+        width: 210px;
+      }
+
+      &__price {
+        font-size: 22px;
+        font-weight: 400;
+        color: rgb(87, 87, 87);
+
+        &__span {
+          color: $pinkColor;
+        }
+      }
+
+      &__color {
+        font-size: 22px;
+        font-weight: 400;
+        color: rgb(87, 87, 87);
+
+        &__span {
+          color: rgb(111, 110, 110);
+        }
+      }
+
+      &__size {
+        font-size: 22px;
+        font-weight: 400;
+        color: rgb(87, 87, 87);
+
+        &__span {
+          color: rgb(111, 110, 110);
+        }
+      }
+
+      &__quantity {
+        font-size: 22px;
+        font-weight: 400;
+        color: rgb(87, 87, 87);
+
+
+        &__span {
+          color: rgb(111, 110, 110);
+        }
+      }
+
+      &__input {
+        width: 44px;
+        height: 25px;
+        text-align: center;
+        color: rgb(101, 101, 101);
+        font-size: 18px;
+        font-weight: 400;
+        margin-left: 24px;
+        border: 1px solid rgb(234, 234, 234);
+      }
+    }
+
+    &__button {
+      display: flex;
+      gap: 192px;
+
+      &__clear {
+        width: 235px;
+        height: 50px;
+        color: rgb(0, 0, 0);
+        font-size: 14px;
+        font-weight: 300;
+        background: rgb(255, 255, 255);
+        border: 1px solid rgb(164, 164, 164);
+        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+
+        &:hover {
+          background-color: $pinkColor;
+          color: #fff;
+          border: none;
+        }
+
+        &:active {
+          transform: scale(0.98);
+        }
+      }
+
+      &__continue {
+        width: 235px;
+        height: 50px;
+        color: rgb(0, 0, 0);
+        font-size: 14px;
+        font-weight: 300;
+        background: rgb(255, 255, 255);
+        border: 1px solid rgb(164, 164, 164);
+        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+
+        &:hover {
+          background-color: $pinkColor;
+          color: #fff;
+          border: none;
+        }
+
+        &:active {
+          transform: scale(0.98);
+        }
+      }
+    }
+  }
+
+  &__info {
+    margin-top: 94px;
+    display: flex;
+    flex-direction: column;
+    gap: 57px;
+
+    .shipping__address {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 360px;
+
+      &__title {
+        color: rgb(34, 34, 34);
+        font-size: 16px;
+        font-weight: 300;
+      }
+
+      &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &__bangladesh {
+          padding-left: 17px;
+          font-size: 13px;
+          font-weight: 300;
+          width: 360px;
+          height: 45px;
+        }
+
+        &__bangladesh::placeholder {
+          color: rgb(177, 177, 177);
+        }
+
+        &__input {
+          width: 360px;
+          height: 45px;
+          padding-left: 17px;
+          font-size: 13px;
+          font-weight: 300;
+          color: rgb(34, 34, 34);
+        }
+
+        &__button {
+          width: 100.39px;
+          height: 34px;
+          border: 1px solid rgb(164, 164, 164);
+          background: rgb(255, 255, 255);
+          color: rgb(74, 74, 74);
+          font-size: 11px;
+          font-weight: 300;
+          transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+
+          &:hover {
+            background-color: $pinkColor;
+            color: #fff;
+            border: none;
+          }
+
+          &:active {
+            transform: scale(0.98);
+          }
+        }
+      }
+    }
+
+    .final__price {
+      width: 360px;
+      height: 214px;
+      background: rgb(245, 243, 243);
+
+      &__top {
+        color: rgb(74, 74, 74);
+        font-size: 11px;
+        font-weight: 400;
+        padding-top: 39px;
+        padding-left: 218px;
+        padding-right: 37px;
+      }
+
+      &__top__span {
+        padding-left: 20px;
+      }
+
+      &__total {
+        font-size: 16px;
+        font-weight: 300;
+        padding-top: 12px;
+        padding-left: 153px;
+        padding-right: 37px;
+      }
+
+      &__span {
+        font-size: 16px;
+        font-weight: 700;
+        color: $pinkColor;
+        padding-left: 20px;
+      }
+
+      &__line {
+        background: rgb(226, 226, 226);
+        width: 275px;
+        margin-top: 21px;
+        margin-left: 43px;
+      }
+
+      &__button {
+        font-weight: 300;
+        width: 273px;
+        height: 50px;
+        background: $pinkColor;
+        color: rgb(255, 255, 255);
+        font-size: 16px;
+        border: none;
+        margin-top: 17px;
+        margin-left: 44px;
+        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+
+        &:hover {
+          color: $pinkColor;
+          background-color: #fff;
+          border: 1px solid $pinkColor;
+        }
+
+        &:active {
+          transform: scale(0.98);
+        }
+      }
+    }
   }
 }
 
@@ -154,7 +442,6 @@ body {
       color: $blackColor;
       font-size: 18px;
       font-weight: 400;
-
     }
 
     &__input {
@@ -188,6 +475,13 @@ body {
       height: 49px;
       border-top-right-radius: 25px;
       border-bottom-right-radius: 25px;
+      transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+
+    &__button:hover {
+      color: $pinkColor;
+      background-color: #fff;
+      border: 1px solid $pinkColor;
     }
 
     &__button:active {
@@ -203,22 +497,39 @@ body {
     color: #fff;
     gap: 655px;
     justify-content: center;
-  }
 
-  &__bottom__text {
-    width: 332px;
-  }
-
-  &__bottom__right {
-    display: flex;
-    gap: 7px;
-
-    &__link {
-      transition: all 0.5s ease;
+    &__text {
+      width: 332px;
     }
 
-    &__link:hover {
-      transform: scale(1.15);
+    &__right {
+      display: flex;
+      gap: 7px;
+
+      &__svg path.black-fill {
+        fill: black;
+        transition: fill 0.3s ease;
+      }
+
+      &__svg:hover path.black-fill {
+        fill: #fff;
+      }
+
+      &__link {
+        path {
+          transition: fill 0.3s ease;
+        }
+
+        &:hover {
+          path {
+            fill: $pinkColor;
+          }
+
+          g path {
+            fill: #fff;
+          }
+        }
+      }
     }
   }
 }
