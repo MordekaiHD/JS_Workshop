@@ -42,13 +42,13 @@ class Library {
     this.#books.splice(index, 1);
   }
 
-  // Метод для проверки наличия книги
+
   hasBook(title) {
     return this.#books.includes(title);
   }
 }
 
-// Пример использования класса
+
 try {
   const myLibrary = new Library(['Гарри Поттер', 'Война и мир']);
 
@@ -56,16 +56,16 @@ try {
   myLibrary.addBook('1984');
 
   // Проверка наличия книги
-  console.log(myLibrary.hasBook('1984'));  // true
+  console.log(myLibrary.hasBook('1984'));
 
   // Получение всех книг
-  console.log(myLibrary.allBooks);  // ['Гарри Поттер', 'Война и мир', '1984']
+  console.log(myLibrary.allBooks);
 
   // Удаление книги
   myLibrary.removeBook('1984');
 
   // Проверка отсутствия книги
-  console.log(myLibrary.hasBook('1984'));  // false
+  console.log(myLibrary.hasBook('1984'));
 } catch (error) {
   console.error(error.message);
 }
@@ -121,10 +121,10 @@ function renderReviews() {
   reviewsContainer.innerHTML = '';
 
   initialData.forEach(product => {
-  
+
     const productContainer = document.createElement('div');
     productContainer.className = 'product-reviews';
-  
+
     const productTitle = document.createElement('h2');
     productTitle.textContent = product.product;
     productContainer.appendChild(productTitle);
@@ -161,11 +161,11 @@ document.querySelector('.submit-review').addEventListener('click', () => {
   const errorMessage = document.querySelector('.error-message');
 
   try {
-    errorMessage.textContent = ''; 
-    addReview(reviewText); 
-    document.querySelector('.review-text').value = ''; 
+    errorMessage.textContent = '';
+    addReview(reviewText);
+    document.querySelector('.review-text').value = '';
   } catch (error) {
-    errorMessage.textContent = error.message; 
+    errorMessage.textContent = error.message;
   }
 });
 
