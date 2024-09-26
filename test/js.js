@@ -1,116 +1,172 @@
 // Задание 1
-// • Используя Symbol.iterator, создайте объект "Музыкальная коллекция", который можно итерировать. Каждая итерация должна возвращать следующий альбом из коллекции.
+// Представьте, что у вас есть класс для управления библиотекой. В этом классе будет приватное свойство для хранения списка книг, а также методы для добавления книги, удаления книги и получения информации о наличии книги.
 
-// • Создайте объект musicCollection, который содержит массив альбомов и имеет свойство-символ Symbol.iterator. Каждый альбом имеет следующую структуру:
+// Класс должен содержать приватное свойство #books, которое инициализируется пустым массивом и представляет собой список книг в библиотеке.
 
-// {
-// title: "Название альбома",
-// artist: "Исполнитель",
-// year: "Год выпуска"
-// }
+// Реализуйте геттер allBooks, который возвращает текущий список книг.
 
-// • Реализуйте кастомный итератор для объекта musicCollection. Итератор должен перебирать альбомы по порядку.
-// • Используйте цикл for...of для перебора альбомов в музыкальной коллекции и вывода их на консоль в формате: Название альбома - Исполнитель (Год выпуска)
+// Реализуйте метод addBook(title), который позволяет добавлять книгу в список. Если книга с таким названием уже существует в списке, выбросьте ошибку с соответствующим сообщением.
 
+// Реализуйте метод removeBook(title), который позволит удалять книгу из списка по названию. Если книги с таким названием нет в списке, выбросьте ошибку с соответствующим сообщением.
 
-class MusicCollection {
-  constructor(albums) {
-    this.albums = albums;
+// Реализуйте метод hasBook(title), который будет проверять наличие книги в библиотеке и возвращать true или false в зависимости от того, есть ли такая книга в списке или нет.
+
+// Реализуйте конструктор, который принимает начальный список книг (массив) в качестве аргумента. Убедитесь, что предоставленный массив не содержит дубликатов; в противном случае выбрасывайте ошибку.
+
+class Library {
+  #books;
+
+  constructor(initialBooks = []) {
+    if (new Set(initialBooks).size !== initialBooks.length) {
+      throw new Error('В начальном списке книг есть дубликаты');
+    }
+    this.#books = [...initialBooks];
   }
 
-  [Symbol.iterator]() {
-    let index = 0;
-    const albums = this.albums;
+  get allBooks() {
+    return [...this.#books];
+  }
 
-    return {
-      next() {
-        if (index < albums.length) {
-          return {
-            value: albums[index++],
-            done: false
-          };
-        } else {
-          return {
-            done: true
-          };
-        }
-      }
-    };
+  addBook(title) {
+    if (this.#books.includes(title)) {
+      throw new Error(`Книга "${title}" уже существует в библиотеке`);
+    }
+    this.#books.push(title);
+  }
+
+  removeBook(title) {
+    const index = this.#books.indexOf(title);
+    if (index === -1) {
+      throw new Error(`Книга "${title}" не найдена в библиотеке`);
+    }
+    this.#books.splice(index, 1);
+  }
+
+  // Метод для проверки наличия книги
+  hasBook(title) {
+    return this.#books.includes(title);
   }
 }
 
-const albums = [
-  { title: 'Album 1', artist: 'Artist 1', year: '2000' },
-  { title: 'Album 2', artist: 'Artist 2', year: '2005' },
-  { title: 'Album 3', artist: 'Artist 3', year: '2010' }
-];
+// Пример использования класса
+try {
+  const myLibrary = new Library(['Гарри Поттер', 'Война и мир']);
 
-const musicCollection = new MusicCollection(albums);
+  // Добавление новой книги
+  myLibrary.addBook('1984');
 
-for (const album of musicCollection) {
-  console.log(`${album.title} - ${album.artist} (${album.year})`);
+  // Проверка наличия книги
+  console.log(myLibrary.hasBook('1984'));  // true
+
+  // Получение всех книг
+  console.log(myLibrary.allBooks);  // ['Гарри Поттер', 'Война и мир', '1984']
+
+  // Удаление книги
+  myLibrary.removeBook('1984');
+
+  // Проверка отсутствия книги
+  console.log(myLibrary.hasBook('1984'));  // false
+} catch (error) {
+  console.error(error.message);
 }
 
 
 
 // Задание 2
-// Вы управляете рестораном, в котором работают разные повара, специализирующиеся на определенных блюдах. Клиенты приходят и делают заказы на разные блюда.
+// Вы разрабатываете систему отзывов для вашего веб-сайта. Пользователи могут оставлять отзывы, но чтобы исключить слишком короткие или слишком длинные сообщения, вы решаете установить некоторые ограничения.
 
-// Необходимо создать систему управления этими заказами, которая позволит:
+// Создайте HTML-структуру с текстовым полем для ввода отзыва, кнопкой для отправки и контейнером, где будут отображаться отзывы.
 
-// • Отслеживать, какой повар готовит какое блюдо.
-// • Записывать, какие блюда заказал каждый клиент.
+// Напишите функцию, которая будет добавлять отзыв в контейнер с отзывами. Однако если длина введенного отзыва менее 50 или более 500 символов, функция должна генерировать исключение.
 
-// Используйте коллекции Map для хранения блюд и их поваров, а также для хранения заказов каждого клиента. В качестве ключей для клиентов используйте объекты.
+// При добавлении отзыва, он должен отображаться на странице под предыдущими отзывами, а не заменять их.
 
-// Повара и их специализации:
 
-// Виктор - специализация: Пицца.
-// Ольга - специализация: Суши.
-// Дмитрий - специализация: Десерты.
+const initialData = [
+  {
+    product: "Apple iPhone 13",
+    reviews: [
+      {
+        id: "1",
+        text: "Отличный телефон! Батарея держится долго.",
+      },
+      {
+        id: "2",
+        text: "Камера супер, фото выглядят просто потрясающе.",
+      },
+    ],
+  },
+  {
+    product: "Samsung Galaxy Z Fold 3",
+    reviews: [
+      {
+        id: "3",
+        text: "Интересный дизайн, но дорогой.",
+      },
+    ],
+  },
+  {
+    product: "Sony PlayStation 5",
+    reviews: [
+      {
+        id: "4",
+        text: "Люблю играть на PS5, графика на высоте.",
+      },
+    ],
+  },
+];
 
-// Блюда и их повара:
+function renderReviews() {
+  const reviewsContainer = document.querySelector('.reviews-container');
+  reviewsContainer.innerHTML = '';
 
-// Пицца "Маргарита" - повар: Виктор.
-// Пицца "Пепперони" - повар: Виктор.
-// Суши "Филадельфия" - повар: Ольга.
-// Суши "Калифорния" - повар: Ольга.
-// Тирамису - повар: Дмитрий.
-// Чизкейк - повар: Дмитрий.
+  initialData.forEach(product => {
+  
+    const productContainer = document.createElement('div');
+    productContainer.className = 'product-reviews';
+  
+    const productTitle = document.createElement('h2');
+    productTitle.textContent = product.product;
+    productContainer.appendChild(productTitle);
 
-// Заказы:
-
-// Клиент Алексей заказал: Пиццу "Пепперони" и Тирамису.
-// Клиент Мария заказала: Суши "Калифорния" и Пиццу "Маргарита".
-// Клиент Ирина заказала: Чизкейк.
-
-const cooks = new Map([
-  ["Пицца 'Маргарита'", "Виктор"],
-  ["Пицца 'Пепперони'", "Виктор"],
-  ["Суши 'Филадельфия'", "Ольга"],
-  ["Суши 'Калифорния'", "Ольга"],
-  ["Тирамису", "Дмитрий"],
-  ["Чизкейк", "Дмитрий"]
-]);
-
-const alexey = { name: "Алексей" };
-const maria = { name: "Мария" };
-const irina = { name: "Ирина" };
-
-const orders = new Map([
-  [alexey, ["Пицца 'Пепперони'", "Тирамису"]],
-  [maria, ["Суши 'Калифорния'", "Пицца 'Маргарита'"]],
-  [irina, ["Чизкейк"]]
-]);
-
-function displayOrdersAndChefs() {
-  orders.forEach((dishes, client) => {
-    console.log(`Заказы клиента ${client.name}:`);
-    dishes.forEach(dish => {
-      const chef = cooks.get(dish);
-      console.log(`  - ${dish} (Повар: ${chef})`);
+    product.reviews.forEach(review => {
+      const reviewElement = document.createElement('p');
+      reviewElement.textContent = review.text;
+      productContainer.appendChild(reviewElement);
     });
+
+    reviewsContainer.appendChild(productContainer);
   });
 }
 
-displayOrdersAndChefs();
+function addReview(reviewText) {
+  if (reviewText.length < 50) {
+    throw new Error("Отзыв слишком короткий. Минимальная длина — 50 символов.");
+  }
+  if (reviewText.length > 500) {
+    throw new Error("Отзыв слишком длинный. Максимальная длина — 500 символов.");
+  }
+
+  const newReview = {
+    id: (initialData[0].reviews.length + 1).toString(),
+    text: reviewText,
+  };
+  initialData[0].reviews.push(newReview);
+
+  renderReviews();
+}
+
+document.querySelector('.submit-review').addEventListener('click', () => {
+  const reviewText = document.querySelector('.review-text').value;
+  const errorMessage = document.querySelector('.error-message');
+
+  try {
+    errorMessage.textContent = ''; 
+    addReview(reviewText); 
+    document.querySelector('.review-text').value = ''; 
+  } catch (error) {
+    errorMessage.textContent = error.message; 
+  }
+});
+
+renderReviews();

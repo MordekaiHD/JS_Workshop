@@ -10,13 +10,20 @@
 
 <body>
 
-  <div>Element 1</div>
-  <div data-active="true">Element 2</div>
-  <div>Element 3</div>
-  <div data-active="true">Element 4</div>
+  <h1>Отзывы о продуктах</h1>
+
+  <!-- Форма для добавления отзыва -->
+  <div class="review-form">
+    <h3>Оставьте ваш отзыв</h3>
+    <textarea class="review-text" placeholder="Введите ваш отзыв" rows="5" cols="50"></textarea><br><br>
+    <button class="submit-review">Отправить отзыв</button>
+    <p class="error-message error"></p>
+  </div>
+
+  <!-- Контейнер для отображения отзывов -->
+  <div class="reviews-container"></div>
 
   <script src="js.js"></script>
-
 </body>
 
 </html>
