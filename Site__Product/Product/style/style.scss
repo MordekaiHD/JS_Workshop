@@ -26,6 +26,7 @@ body {
     gap: 41px;
     align-items: baseline;
 
+
     &__link {
       path {
         transition: fill 0.3s ease;
@@ -113,175 +114,241 @@ body {
 
 #checkbox:checked~.header__menu {
   right: 0;
+  z-index: 1;
 }
 
-.main {
-  &__top {
+.main__top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 148px;
+  background: rgb(248, 243, 244);
+  gap: 710px;
+
+  &__title {
+    color: $pinkColor;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  &__list {
     display: flex;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: rgb(99, 99, 99);
+    font-size: 14px;
+    font-weight: 300;
+    padding-right: 5px;
+  }
+
+
+  &__box:last-of-type &__link {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgb(241, 109, 127);
+  }
+
+  &__box:not(:last-child)::after {
+    content: '/';
+    padding-left: 8px;
+    padding-right: 8px;
+    color: rgb(99, 99, 99);
+    font-size: 14px;
+    font-weight: 300;
+  }
+}
+
+.products {
+  position: relative;
+
+  &__info {
+    position: relative;
+    background: rgb(247, 247, 247);
+    height: 777px;
+    display: flex;
+    justify-content: center;
+    padding-top: 11px;
+
+    &__img {
+      height: 724px;
+    }
+
+    &__left {
+      position: absolute;
+      top: 365px;
+      left: 0;
+
+      #Vector {
+        transition: fill 0.3s ease;
+      }
+
+      &:hover #Vector {
+        fill: $pinkColor;
+      }
+    }
+
+    &__right {
+      position: absolute;
+      top: 280px;
+      right: 100px;
+
+      #Vector {
+        transition: fill 0.3s ease;
+      }
+
+      &:hover #Vector {
+        fill: $pinkColor;
+      }
+    }
+  }
+
+  &__description {
+    position: absolute;
+    width: 1141px;
+    height: 600px;
+    top: 712px;
+    left: 180px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    height: 148px;
-    background: rgb(248, 243, 244);
+    border: 1px solid rgb(234, 234, 234);
+
+    &__top__title {
+      margin-top: 65px;
+      color: $pinkColor;
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    &__line__top {
+      width: 63px;
+      height: 3.03px;
+      background-color: $pinkColor;
+      border: none;
+      margin-top: 12px;
+    }
 
     &__title {
+      color: rgb(77, 77, 77);
+      font-size: 18px;
+      font-weight: 300;
+      margin-top: 12px;
+    }
+
+    &__text {
+      color: rgb(94, 94, 94);
+      font-size: 14px;
+      font-weight: 300;
+      margin-top: 49px;
+      width: 548px;
+      text-align: center;
+    }
+
+    &__price {
+      margin-top: 32px;
       color: $pinkColor;
       font-size: 24px;
+      font-weight: 300;
+    }
+
+    &__line {
+      margin-top: 65px;
+      border: 1px solid rgb(234, 234, 234);
+      width: 642px;
+    }
+
+    &__filter {
+      display: flex;
+      gap: 23px;
+      justify-content: center;
+    }
+
+    &__summary {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: rgb(111, 110, 110);
+      font-size: 14px;
       font-weight: 400;
-      margin-left: 200px;
-    }
-  }
-
-  &__registracion {
-    display: flex;
-    gap: 128px;
-
-    .main__address {
-      .main__user {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        margin: 64px 0 33px 230px;
-
-        &__title {
-          color: rgb(34, 34, 34);
-          font-size: 16px;
-          font-weight: 300;
-        }
-
-        &__input {
-          width: 360px;
-          height: 45px;
-          padding-left: 10px;
-
-          &::placeholder {
-            color: rgb(177, 177, 177);
-            font-size: 13px;
-            font-weight: 300;
-          }
-        }
-
-        &__chekbox {
-          font-size: 11px;
-          font-weight: 300;
-          display: flex;
-          align-items: center;
-          margin-top: 10px;
-          gap: 10px;
-
-          &__input {
-            appearance: none;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            box-sizing: border-box;
-            border: 1px solid rgb(164, 164, 164);
-
-            &_right {
-              margin-left: 20px;
-            }
-
-            &:checked {
-              background-color: $pinkColor;
-            }
-          }
-        }
-      }
-
-      .main__details {
-        display: flex;
-        flex-direction: column;
-        margin-left: 230px;
-
-        &__title {
-          color: rgb(34, 34, 34);
-          font-size: 16px;
-          font-weight: 300;
-        }
-
-        &__input {
-          width: 360px;
-          height: 45px;
-          padding-left: 10px;
-          margin-top: 20px;
-          color: rgb(177, 177, 177);
-          font-size: 13px;
-          font-weight: 300;
-
-          &::placeholder {
-            color: rgb(177, 177, 177);
-            font-size: 13px;
-            font-weight: 300;
-          }
-        }
-
-        &__text {
-          color: rgb(177, 177, 177);
-          font-size: 13px;
-          font-weight: 300;
-          width: 360px;
-          margin-top: 15px;
-          margin-bottom: 40px;
-        }
-      }
-
+      margin-top: 65px;
     }
 
-    .main__info {
-      &__title {
-        font-size: 24px;
-        font-weight: 300;
-        margin-top: 64px;
+    &__add {
+      transition: all 0.3s ease;
+
+      &:hover svg path {
+        fill: #fff;
       }
 
-      &__text {
-        font-size: 24px;
-        font-weight: 300;
-        margin-top: 22px;
-        width: 652px;
-      }
-
-      &__list {
-        display: flex;
-        gap: 23px;
-        flex-direction: column;
-        margin-top: 21px;
-
-        &__text {
-          display: flex;
-          gap: 23px;
-          font-size: 24px;
-          font-weight: 300;
-          align-items: center;
-        }
-      }
+      margin-top: 49px;
     }
-  }
 
-  &__button {
-    width: 167px;
-    height: 50px;
-    background: rgb(241, 109, 127);
-    color: #fff;
-    border: none;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding-left: 30px;
-    margin-left: 230px;
-    margin-bottom: 96px;
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-
-    &:hover {
-      color: $pinkColor;
-      background-color: #fff;
+    &__button {
+      width: 212px;
+      height: 48.41px;
       border: 1px solid $pinkColor;
+      background-color: #fff;
+      color: $pinkColor;
+      font-size: 16px;
+      font-weight: 400;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border: 1px solid rgb(255, 106, 106);
+        background: rgb(241, 109, 127);
+        color: #fff;
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 360px);
+    gap: 30px;
+    justify-content: center;
+    margin-top: 664px;
+    margin-bottom: 128px;
+  }
+
+  &__items {
+    background: rgb(248, 248, 248);
+
+    &__info {
+      margin-top: 23px;
+      margin-right: 28px;
+      margin-left: 16px;
+      margin-bottom: 20px;
     }
 
-    &:active {
-      transform: scale(0.95);
+    &__title {
+      font-size: 13px;
+      font-weight: 400;
     }
 
-    &:hover svg path {
-      fill: $pinkColor;
+    &__text {
+      color: rgb(93, 93, 93);
+      font-size: 14px;
+      font-weight: 300;
+      margin-top: 12px;
+      margin-bottom: 18px;
+    }
+
+    &__price {
+      color: $pinkColor;
+      font-size: 16px;
+      font-weight: 400;
     }
   }
 }
@@ -439,50 +506,27 @@ body {
     gap: 600px;
   }
 
-  .header__menu {
-    z-index: 1;
+  .main__top {
+    gap: 455px;
   }
 
-  .header__nav__left {
-    padding-left: 70px;
+  .products__description {
+    width: 826px;
+    left: 103px;
   }
 
-  .main__top__title {
-    margin-left: 70px;
+  .products__list {
+    grid-template-columns: repeat(3, 320px);
+    gap: 15px;
   }
 
-  .main__registracion {
-    gap: 44px;
+  .products__items__img {
+    width: 320px;
   }
 
-  .main__registracion .main__address .main__user {
-    margin: 64px 0 33px 70px;
-  }
-
-  .main__registracion .main__address .main__details {
-    margin-left: 70px;
-  }
-
-  .main__button {
-    margin-left: 70px;
-  }
-
-  .main__registracion .main__info__title {
-    font-size: 20px;
-  }
-
-  .main__registracion .main__info__text {
-    font-size: 20px;
-    width: 520px;
-  }
-
-  .main__registracion .main__info__list__text {
-    font-size: 20px;
-  }
-
-  .footer__img {
-    min-height: 448px;
-    object-fit: cover;
+  .main__feature {
+    grid-template-columns: repeat(3, 318px);
+    gap: 20px;
   }
 
   .footer__left {
@@ -505,46 +549,29 @@ body {
     gap: 424px;
   }
 
-  .header__menu {
-    z-index: 1;
+  .main__top {
+    gap: 333px;
   }
 
-  .header__nav__left {
-    padding-left: 33px;
+  .products__description {
+    width: 766px;
+    left: 0;
   }
 
-  .main__registracion {
-    gap: 22px;
+  .products__items:nth-child(3) {
+    display: none;
   }
 
-  .main__registracion .main__address .main__user {
-    margin: 64px 0 33px 16px;
+  .products__list {
+    grid-template-columns: repeat(2, 360px);
   }
 
-  .main__registracion .main__address .main__details {
-    margin-left: 16px;
-  }
-
-  .main__button {
-    margin-left: 16px;
-  }
-
-  .main__registracion .main__info__title {
-    font-size: 16px;
-  }
-
-  .main__registracion .main__info__text {
-    font-size: 16px;
-    width: 354px;
-  }
-
-  .main__registracion .main__info__list__text {
-    font-size: 16px;
+  .products__items__img {
+    width: 360px;
   }
 
   .footer__img {
     min-height: 693px;
-    object-fit: cover;
   }
 
   .footer__left {

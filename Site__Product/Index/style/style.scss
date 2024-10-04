@@ -18,20 +18,43 @@ body {
   background-color: $blackColor;
   display: flex;
   align-items: center;
+  gap: 859px;
   justify-content: center;
-  gap: 860px;
 
-  &__nav {
-    &__left {
-      display: flex;
-      gap: 41px;
-      align-items: baseline;
+  &__nav__left {
+    display: flex;
+    gap: 41px;
+    align-items: baseline;
+
+
+    &__link {
+      path {
+        transition: fill 0.3s ease;
+      }
+
+      &:hover {
+        path {
+          fill: $pinkColor;
+        }
+      }
     }
+  }
 
-    &__right {
-      display: flex;
-      gap: 33px;
-      align-items: baseline;
+  &__nav__right {
+    display: flex;
+    gap: 33px;
+    align-items: baseline;
+
+    &__svg {
+      path {
+        transition: fill 0.3s ease;
+      }
+
+      &:hover {
+        path {
+          fill: $pinkColor;
+        }
+      }
     }
   }
 
@@ -43,39 +66,43 @@ body {
     top: 75px;
     right: -232px;
     transition: right 0.5s;
-  }
 
-  &__title {
-    padding: 37px 34px 24px;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 17px;
-  }
+    .header__title {
+      padding: 37px 34px 24px;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 17px;
+    }
 
-  &__man {
-    padding-left: 33px;
-  }
+    .header__man {
+      padding-left: 33px;
 
-  &__subtitle {
-    color: $pinkColor;
-    font-size: 14px;
-    font-weight: 400;
-  }
+      &__subtitle {
+        color: $pinkColor;
+        font-size: 14px;
+        font-weight: 400;
+      }
 
-  &__ul {
-    padding: 12px 22px 20px;
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    gap: 11px;
-  }
+      &__ul {
+        padding: 12px 22px 20px;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+      }
 
-  &__link {
-    text-decoration: none;
-    color: rgb(111, 110, 110);
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 17px;
+      &__link {
+        text-decoration: none;
+        color: rgb(111, 110, 110);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+
+        &:hover {
+          color: $pinkColor;
+        }
+      }
+    }
   }
 }
 
@@ -281,6 +308,12 @@ body {
     justify-content: center;
   }
 
+  &__position {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+  }
+
   &__button {
     border: 1px solid $pinkColor;
     background-color: #fff;
@@ -289,8 +322,6 @@ body {
     color: $pinkColor;
     font-size: 16px;
     font-weight: 400;
-    margin-top: 48px;
-    margin-left: 655px;
     transition: all 0.5s ease;
 
     &:hover {
@@ -337,7 +368,8 @@ body {
 
 .feature {
   margin-top: 95px;
-  height: 341px;
+  padding-top: 103px;
+  padding-bottom: 102px;
   background-color: rgb(34, 34, 36);
   color: #fff;
   display: grid;
@@ -371,8 +403,10 @@ body {
   position: relative;
 
   &__img {
-    width: 100%;
     display: flex;
+    width: 100vw;
+    height: 448px;
+    object-fit: cover;
   }
 
   &__left {
@@ -421,7 +455,6 @@ body {
       color: $blackColor;
       font-size: 18px;
       font-weight: 400;
-
     }
 
     &__input {
@@ -455,6 +488,13 @@ body {
       height: 49px;
       border-top-right-radius: 25px;
       border-bottom-right-radius: 25px;
+      transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+
+    &__button:hover {
+      color: $pinkColor;
+      background-color: #fff;
+      border: 1px solid $pinkColor;
     }
 
     &__button:active {
@@ -470,22 +510,267 @@ body {
     color: #fff;
     gap: 655px;
     justify-content: center;
+
+    &__text {
+      width: 332px;
+    }
+
+    &__right {
+      display: flex;
+      gap: 7px;
+
+      &__svg path.black-fill {
+        fill: black;
+        transition: fill 0.3s ease;
+      }
+
+      &__svg:hover path.black-fill {
+        fill: #fff;
+      }
+
+      &__link {
+        path {
+          transition: fill 0.3s ease;
+        }
+
+        &:hover {
+          path {
+            fill: $pinkColor;
+          }
+
+          g path {
+            fill: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    gap: 600px;
   }
 
-  &__bottom__text {
-    width: 332px;
+  .header__menu {
+    z-index: 1;
   }
 
-  &__bottom__right {
+  .header__nav__left {
+    padding-left: 70px;
+  }
+
+  .main__img {
+    width: 470px;
+  }
+
+  .proposals {
+    gap: 22px;
+  }
+
+  .proposals__img {
+    width: 30vw;
+  }
+
+  .proposals__title__women {
+    top: 87px;
+    left: 126px;
+  }
+
+  .proposals__text__women {
+    top: 112px;
+    left: 82px;
+  }
+
+  .proposals__title__men {
+    top: 87px;
+    left: 120px;
+  }
+
+  .proposals__text__men {
+    top: 112px;
+    left: 106px;
+  }
+
+  .proposals__title__kids {
+    top: 87px;
+    left: 100px;
+  }
+
+  .proposals__text__kids {
+    top: 112px;
+    left: 103px;
+  }
+
+  .proposals__accesores__img {
+    width: 95vw;
+  }
+
+  .proposals__title__accesores {
+    top: 53px;
+    left: 410px;
+  }
+
+  .proposals__text__accesores {
+    top: 76px;
+    left: 416px;
+  }
+
+  .products__button {
     display: flex;
-    gap: 7px;
+    justify-content: center;
+    align-items: center;
+  }
 
-    &__link {
-      transition: all 0.5s ease;
-    }
+  .products__list {
+    grid-template-columns: repeat(3, 30vw);
+    gap: 15px;
+  }
 
-    &__link:hover {
-      transform: scale(1.15);
-    }
+  .feature {
+    grid-template-columns: repeat(3, 315px);
+    gap: 10px;
+  }
+
+  .footer__img {
+    min-height: 448px;
+    object-fit: cover;
+  }
+
+  .footer__left {
+    left: 68px;
+    top: 123px;
+  }
+
+  .footer__right {
+    left: 466px;
+    top: 143px;
+  }
+
+  .footer__bottom {
+    gap: 324px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    gap: 424px;
+  }
+
+  .header__menu {
+    z-index: 1;
+  }
+
+  .header__nav__left {
+    padding-left: 33px;
+  }
+
+  .main__img {
+    width: 385px;
+  }
+
+  .main__info .main__information {
+    margin-left: 40px;
+  }
+
+  .main__info__title {
+    font-size: 44px;
+  }
+
+  .main__info__text {
+    font-size: 24px;
+  }
+
+  .main__info__span {
+    font-size: 24px;
+  }
+
+  .proposals {
+    gap: 18px;
+    margin-top: 20px;
+  }
+
+  .proposals__img {
+    width: 30vw;
+  }
+
+  .proposals__title__women {
+    top: 65px;
+    left: 85px;
+  }
+
+  .proposals__text__women {
+    top: 87px;
+    left: 44px;
+  }
+
+  .proposals__title__men {
+    top: 65px;
+    left: 81px;
+  }
+
+  .proposals__text__men {
+    top: 87px;
+    left: 64px;
+  }
+
+  .proposals__title__kids {
+    top: 65px;
+    left: 63px;
+  }
+
+  .proposals__text__kids {
+    top: 87px;
+    left: 67px;
+  }
+
+  .proposals__title__accesores {
+    top: 35px;
+    left: 288px;
+  }
+
+  .proposals__text__accesores {
+    top: 58px;
+    left: 294px;
+  }
+
+  .products__title {
+    margin-top: 154px;
+  }
+
+  .products__list {
+    grid-template-columns: repeat(2, 360px);
+    gap: 16px;
+  }
+
+  .products__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .feature {
+    grid-template-columns: repeat(1, 320px);
+    padding-top: 48px;
+    padding-bottom: 68px;
+  }
+
+  .footer__img {
+    min-height: 693px;
+    object-fit: cover;
+  }
+
+  .footer__left {
+    left: 200px;
+    top: 106px;
+  }
+
+  .footer__right {
+    left: 120px;
+    top: 398px;
+  }
+
+  .footer__bottom {
+    gap: 200px;
   }
 }

@@ -15,20 +15,31 @@ body {
   background-color: rgb(34, 34, 36);
   display: flex;
   align-items: center;
+  gap: 859px;
   justify-content: center;
-  gap: 860px;
 }
 .header__nav__left {
   display: flex;
   gap: 41px;
   align-items: baseline;
 }
+.header__nav__left__link path {
+  transition: fill 0.3s ease;
+}
+.header__nav__left__link:hover path {
+  fill: rgb(241, 109, 127);
+}
 .header__nav__right {
   display: flex;
   gap: 33px;
   align-items: baseline;
 }
-
+.header__nav__right__svg path {
+  transition: fill 0.3s ease;
+}
+.header__nav__right__svg:hover path {
+  fill: rgb(241, 109, 127);
+}
 .header__menu {
   box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
   background: rgb(255, 255, 255);
@@ -37,39 +48,38 @@ body {
   top: 75px;
   right: -232px;
   transition: right 0.5s;
+  z-index: 10;
 }
-
-.header__title {
+.header__menu .header__title {
   padding: 37px 34px 24px;
   font-size: 14px;
   font-weight: 700;
   line-height: 17px;
 }
-
-.header__man {
+.header__menu .header__man {
   padding-left: 33px;
 }
-
-.header__subtitle {
+.header__menu .header__man__subtitle {
   color: rgb(241, 109, 127);
   font-size: 14px;
   font-weight: 400;
 }
-
-.header__ul {
+.header__menu .header__man__ul {
   padding: 12px 22px 20px;
   list-style-type: none;
   display: flex;
   flex-direction: column;
   gap: 11px;
 }
-
-.header__link {
+.header__menu .header__man__link {
   text-decoration: none;
   color: rgb(111, 110, 110);
   font-size: 14px;
   font-weight: 400;
   line-height: 17px;
+}
+.header__menu .header__man__link:hover {
+  color: rgb(241, 109, 127);
 }
 
 #checkbox {
@@ -87,12 +97,15 @@ body {
   justify-content: center;
   height: 148px;
   background: rgb(248, 243, 244);
+  gap: 710px;
 }
 .main__top__title {
-  padding-right: 755px;
   color: rgb(241, 109, 127);
   font-size: 24px;
   font-weight: 400;
+}
+.main__top__list {
+  display: flex;
 }
 .main__top__link {
   text-decoration: none;
@@ -117,13 +130,13 @@ body {
 }
 
 .main__filter {
-  padding: 57px 583px 57px;
+  padding: 57px 570px 57px;
   position: relative;
 }
 .main__filter__extensive__details {
   position: absolute;
   top: 44px;
-  left: 180px;
+  left: 177px;
 }
 .main__filter__extensive__details[open] {
   color: rgb(241, 109, 127);
@@ -143,6 +156,9 @@ body {
   padding-top: 13px;
   margin-left: 16px;
 }
+.main__filter__extensive__summary:hover {
+  cursor: pointer;
+}
 .main__filter__extensive__category {
   margin: 13px 17px 14px;
   font-size: 14px;
@@ -154,6 +170,9 @@ body {
   border-left: 5px solid;
   border-bottom: 1px solid rgb(235, 235, 235);
   padding: 8px 11px 12px;
+}
+.main__filter__extensive__category__summary:hover {
+  cursor: pointer;
 }
 .main__filter__extensive__category__text {
   padding: 24px 17px 10px;
@@ -170,6 +189,7 @@ body {
 .main__filter__sort {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 28px;
   color: rgb(111, 110, 110);
   font-size: 14px;
@@ -182,6 +202,9 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+.main__filter__sort__summary:hover {
+  cursor: pointer;
 }
 .main__filter__sort__details__box {
   position: absolute;
@@ -199,6 +222,9 @@ body {
 .main__filter__sort__details__lable {
   display: flex;
   gap: 10px;
+}
+.main__filter__sort__details__lable:hover {
+  cursor: pointer;
 }
 
 .products__list {
@@ -235,7 +261,7 @@ body {
 }
 
 .pagination__section {
-  margin-left: 644px;
+  margin-left: 616px;
   margin-top: 48px;
   border: 1px solid rgb(235, 235, 235);
   width: 283px;
@@ -263,7 +289,8 @@ body {
 
 .main__feature {
   margin-top: 95px;
-  height: 341px;
+  padding-top: 103px;
+  padding-bottom: 102px;
   background-color: rgb(34, 34, 36);
   color: #fff;
   display: grid;
@@ -294,8 +321,11 @@ body {
   position: relative;
 }
 .footer__img {
-  width: 100%;
   display: flex;
+  width: 100vw;
+  height: 448px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .footer__left {
   position: absolute;
@@ -370,6 +400,12 @@ body {
   height: 49px;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+.footer__right__button:hover {
+  color: rgb(241, 109, 127);
+  background-color: #fff;
+  border: 1px solid rgb(241, 109, 127);
 }
 .footer__right__button:active {
   transform: scale(0.95);
@@ -390,9 +426,110 @@ body {
   display: flex;
   gap: 7px;
 }
-.footer__bottom__right__link {
-  transition: all 0.5s ease;
+.footer__bottom__right__svg path.black-fill {
+  fill: black;
+  transition: fill 0.3s ease;
 }
-.footer__bottom__right__link:hover {
-  transform: scale(1.15);
+.footer__bottom__right__svg:hover path.black-fill {
+  fill: #fff;
+}
+.footer__bottom__right__link path {
+  transition: fill 0.3s ease;
+}
+.footer__bottom__right__link:hover path {
+  fill: rgb(241, 109, 127);
+}
+.footer__bottom__right__link:hover g path {
+  fill: #fff;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    gap: 600px;
+  }
+  .main__top {
+    gap: 455px;
+  }
+  .main__filter {
+    padding: 57px 0 63px 555px;
+  }
+  .main__filter__extensive__details {
+    left: 64px;
+  }
+  .main__filter__sort__summary_size {
+    width: 132px;
+  }
+  .products__list {
+    grid-template-columns: repeat(3, 277px);
+    gap: 15px;
+  }
+  .products__items__img {
+    width: 277px;
+  }
+  .pagination__section {
+    margin-left: 373px;
+  }
+  .main__feature {
+    grid-template-columns: repeat(3, 295px);
+  }
+  .footer__img {
+    min-height: 448px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .footer__left {
+    left: 68px;
+    top: 123px;
+  }
+  .footer__right {
+    left: 466px;
+    top: 143px;
+  }
+  .footer__bottom {
+    gap: 324px;
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    gap: 424px;
+  }
+  .main__top {
+    gap: 333px;
+  }
+  .main__filter {
+    padding: 57px 0 57px 426px;
+  }
+  .main__filter__extensive__details {
+    left: 0px;
+  }
+  .products__list {
+    grid-template-columns: repeat(2, 360px);
+    gap: 16px;
+  }
+  .products__items__img {
+    width: 360px;
+  }
+  .pagination__section {
+    margin-left: 253px;
+  }
+  .main__feature {
+    grid-template-columns: repeat(1, 360px);
+    gap: 48px;
+  }
+  .footer__img {
+    min-height: 693px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .footer__left {
+    left: 200px;
+    top: 106px;
+  }
+  .footer__right {
+    left: 120px;
+    top: 398px;
+  }
+  .footer__bottom {
+    gap: 200px;
+  }
 }/*# sourceMappingURL=style.css.map */

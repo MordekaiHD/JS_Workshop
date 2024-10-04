@@ -15,13 +15,13 @@ body {
   background-color: rgb(34, 34, 36);
   display: flex;
   align-items: center;
+  gap: 859px;
+  justify-content: center;
 }
 .header__nav__left {
   display: flex;
   gap: 41px;
   align-items: baseline;
-  padding-left: 230px;
-  margin-right: 860px;
 }
 .header__nav__left__link path {
   transition: fill 0.3s ease;
@@ -48,6 +48,7 @@ body {
   top: 75px;
   right: -232px;
   transition: right 0.5s;
+  z-index: 10;
 }
 .header__menu .header__title {
   padding: 37px 34px 24px;
@@ -100,7 +101,7 @@ body {
   color: rgb(241, 109, 127);
   font-size: 24px;
   font-weight: 400;
-  margin-left: 230px;
+  margin-left: 200px;
 }
 .main__registracion {
   display: flex;
@@ -247,8 +248,11 @@ body {
   position: relative;
 }
 .footer__img {
-  width: 100%;
   display: flex;
+  width: 100vw;
+  height: 448px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .footer__left {
   position: absolute;
@@ -364,4 +368,106 @@ body {
 }
 .footer__bottom__right__link:hover g path {
   fill: #fff;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    gap: 600px;
+  }
+  .header__menu {
+    z-index: 1;
+  }
+  .header__nav__left {
+    padding-left: 70px;
+  }
+  .main__top__title {
+    margin-left: 70px;
+  }
+  .main__registracion {
+    gap: 44px;
+  }
+  .main__registracion .main__address .main__user {
+    margin: 64px 0 33px 70px;
+  }
+  .main__registracion .main__address .main__details {
+    margin-left: 70px;
+  }
+  .main__button {
+    margin-left: 70px;
+  }
+  .main__registracion .main__info__title {
+    font-size: 20px;
+  }
+  .main__registracion .main__info__text {
+    font-size: 20px;
+    width: 520px;
+  }
+  .main__registracion .main__info__list__text {
+    font-size: 20px;
+  }
+  .footer__img {
+    min-height: 448px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .footer__left {
+    left: 68px;
+    top: 123px;
+  }
+  .footer__right {
+    left: 466px;
+    top: 143px;
+  }
+  .footer__bottom {
+    gap: 324px;
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    gap: 424px;
+  }
+  .header__menu {
+    z-index: 1;
+  }
+  .header__nav__left {
+    padding-left: 33px;
+  }
+  .main__registracion {
+    gap: 22px;
+  }
+  .main__registracion .main__address .main__user {
+    margin: 64px 0 33px 16px;
+  }
+  .main__registracion .main__address .main__details {
+    margin-left: 16px;
+  }
+  .main__button {
+    margin-left: 16px;
+  }
+  .main__registracion .main__info__title {
+    font-size: 16px;
+  }
+  .main__registracion .main__info__text {
+    font-size: 16px;
+    width: 354px;
+  }
+  .main__registracion .main__info__list__text {
+    font-size: 16px;
+  }
+  .footer__img {
+    min-height: 693px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .footer__left {
+    left: 200px;
+    top: 106px;
+  }
+  .footer__right {
+    left: 120px;
+    top: 398px;
+  }
+  .footer__bottom {
+    gap: 200px;
+  }
 }/*# sourceMappingURL=style.css.map */

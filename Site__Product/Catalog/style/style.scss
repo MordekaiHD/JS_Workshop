@@ -18,63 +18,93 @@ body {
   background-color: $blackColor;
   display: flex;
   align-items: center;
+  gap: 859px;
   justify-content: center;
-  gap: 860px;
 
   &__nav__left {
     display: flex;
     gap: 41px;
     align-items: baseline;
+
+
+    &__link {
+      path {
+        transition: fill 0.3s ease;
+      }
+
+      &:hover {
+        path {
+          fill: $pinkColor;
+        }
+      }
+    }
   }
 
   &__nav__right {
     display: flex;
     gap: 33px;
     align-items: baseline;
+
+    &__svg {
+      path {
+        transition: fill 0.3s ease;
+      }
+
+      &:hover {
+        path {
+          fill: $pinkColor;
+        }
+      }
+    }
   }
-}
 
-.header__menu {
-  box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
-  background: rgb(255, 255, 255);
-  width: 232px;
-  position: absolute;
-  top: 75px;
-  right: -232px;
-  transition: right 0.5s;
-}
+  &__menu {
+    box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
+    background: rgb(255, 255, 255);
+    width: 232px;
+    position: absolute;
+    top: 75px;
+    right: -232px;
+    transition: right 0.5s;
+    z-index: 10;
 
-.header__title {
-  padding: 37px 34px 24px;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 17px;
-}
+    .header__title {
+      padding: 37px 34px 24px;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 17px;
+    }
 
-.header__man {
-  padding-left: 33px;
-}
+    .header__man {
+      padding-left: 33px;
 
-.header__subtitle {
-  color: $pinkColor;
-  font-size: 14px;
-  font-weight: 400;
-}
+      &__subtitle {
+        color: $pinkColor;
+        font-size: 14px;
+        font-weight: 400;
+      }
 
-.header__ul {
-  padding: 12px 22px 20px;
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  gap: 11px;
-}
+      &__ul {
+        padding: 12px 22px 20px;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+      }
 
-.header__link {
-  text-decoration: none;
-  color: rgb(111, 110, 110);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 17px;
+      &__link {
+        text-decoration: none;
+        color: rgb(111, 110, 110);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+
+        &:hover {
+          color: $pinkColor;
+        }
+      }
+    }
+  }
 }
 
 #checkbox {
@@ -92,12 +122,16 @@ body {
   justify-content: center;
   height: 148px;
   background: rgb(248, 243, 244);
+  gap: 710px;
 
   &__title {
-    padding-right: 755px;
     color: $pinkColor;
     font-size: 24px;
     font-weight: 400;
+  }
+
+  &__list {
+    display: flex;
   }
 
   &__link {
@@ -106,7 +140,7 @@ body {
     font-size: 14px;
     font-weight: 300;
     padding-right: 5px;
-    
+
   }
 
 
@@ -114,7 +148,7 @@ body {
     text-decoration: none;
     font-size: 14px;
     font-weight: 700;
-    color: rgb(241, 109, 127);    
+    color: rgb(241, 109, 127);
   }
 
   &__box:not(:last-child)::after {
@@ -128,15 +162,14 @@ body {
 }
 
 .main__filter {
-  padding: 57px 583px 57px;
+  padding: 57px 570px 57px;
   position: relative;
 
   &__extensive {
     &__details {
       position: absolute;
       top: 44px;
-      left: 180px;
-
+      left: 177px;
 
       &[open] {
         color: $pinkColor;
@@ -158,6 +191,10 @@ body {
       font-weight: 600;
       padding-top: 13px;
       margin-left: 16px;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     &__category {
@@ -171,6 +208,10 @@ body {
         border-left: 5px solid;
         border-bottom: 1px solid rgb(235, 235, 235);
         padding: 8px 11px 12px;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
 
       &__text {
@@ -189,11 +230,10 @@ body {
     }
   }
 
-
   &__sort {
     display: flex;
     align-items: center;
-
+    justify-content: center;
     gap: 28px;
     color: rgb(111, 110, 110);
     font-size: 14px;
@@ -207,6 +247,10 @@ body {
       display: flex;
       align-items: center;
       gap: 10px;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     &__details__box {
@@ -226,6 +270,10 @@ body {
     &__details__lable {
       display: flex;
       gap: 10px;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
@@ -268,7 +316,7 @@ body {
 }
 
 .pagination__section {
-  margin-left: 644px;
+  margin-left: 616px;
   margin-top: 48px;
   border: 1px solid rgb(235, 235, 235);
   width: 283px;
@@ -301,7 +349,8 @@ body {
 
 .main__feature {
   margin-top: 95px;
-  height: 341px;
+  padding-top: 103px;
+  padding-bottom: 102px;
   background-color: rgb(34, 34, 36);
   color: #fff;
   display: grid;
@@ -335,8 +384,10 @@ body {
   position: relative;
 
   &__img {
-    width: 100%;
     display: flex;
+    width: 100vw;
+    height: 448px;
+    object-fit: cover;
   }
 
   &__left {
@@ -385,7 +436,6 @@ body {
       color: $blackColor;
       font-size: 18px;
       font-weight: 400;
-
     }
 
     &__input {
@@ -419,6 +469,13 @@ body {
       height: 49px;
       border-top-right-radius: 25px;
       border-bottom-right-radius: 25px;
+      transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+
+    &__button:hover {
+      color: $pinkColor;
+      background-color: #fff;
+      border: 1px solid $pinkColor;
     }
 
     &__button:active {
@@ -434,22 +491,152 @@ body {
     color: #fff;
     gap: 655px;
     justify-content: center;
-  }
 
-  &__bottom__text {
-    width: 332px;
-  }
-
-  &__bottom__right {
-    display: flex;
-    gap: 7px;
-
-    &__link {
-      transition: all 0.5s ease;
+    &__text {
+      width: 332px;
     }
 
-    &__link:hover {
-      transform: scale(1.15);
+    &__right {
+      display: flex;
+      gap: 7px;
+
+      &__svg path.black-fill {
+        fill: black;
+        transition: fill 0.3s ease;
+      }
+
+      &__svg:hover path.black-fill {
+        fill: #fff;
+      }
+
+      &__link {
+        path {
+          transition: fill 0.3s ease;
+        }
+
+        &:hover {
+          path {
+            fill: $pinkColor;
+          }
+
+          g path {
+            fill: #fff;
+          }
+        }
+      }
     }
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    gap: 600px;
+  }
+
+  .main__top {
+    gap: 455px;
+  }
+
+  .main__filter {
+    padding: 57px 0 63px 555px;
+  }
+
+  .main__filter__extensive__details {
+    left: 64px;
+  }
+
+  .main__filter__sort__summary_size {
+    width: 132px;
+  }
+
+  .products__list {
+    grid-template-columns: repeat(3, 277px);
+    gap: 15px;
+  }
+
+  .products__items__img {
+    width: 277px;
+  }
+
+  .pagination__section {
+    margin-left: 373px;
+  }
+
+  .main__feature {
+    grid-template-columns: repeat(3, 295px);
+  }
+
+  .footer__img {
+    min-height: 448px;
+    object-fit: cover;
+  }
+
+  .footer__left {
+    left: 68px;
+    top: 123px;
+  }
+
+  .footer__right {
+    left: 466px;
+    top: 143px;
+  }
+
+  .footer__bottom {
+    gap: 324px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    gap: 424px;
+  }
+
+  .main__top {
+    gap: 333px;
+  }
+
+  .main__filter {
+    padding: 57px 0 57px 426px;
+  }
+
+  .main__filter__extensive__details {
+    left: 0px;
+  }
+
+  .products__list {
+    grid-template-columns: repeat(2, 360px);
+    gap: 16px;
+  }
+
+  .products__items__img {
+    width: 360px;
+  }
+
+  .pagination__section {
+    margin-left: 253px;
+  }
+
+  .main__feature {
+    grid-template-columns: repeat(1, 360px);
+    gap: 48px;
+  }
+
+  .footer__img {
+    min-height: 693px;
+    object-fit: cover;
+  }
+
+  .footer__left {
+    left: 200px;
+    top: 106px;
+  }
+
+  .footer__right {
+    left: 120px;
+    top: 398px;
+  }
+
+  .footer__bottom {
+    gap: 200px;
   }
 }
