@@ -21,6 +21,15 @@ body {
   gap: 859px;
   justify-content: center;
 
+  #checkbox {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  #checkbox:checked~.header__menu {
+    right: 0;
+  }
+
   &__nav__left {
     display: flex;
     gap: 41px;
@@ -107,16 +116,6 @@ body {
   }
 }
 
-#checkbox {
-  position: absolute;
-  visibility: hidden;
-}
-
-#checkbox:checked~.header__menu {
-  right: 0;
-  z-index: 1;
-}
-
 .main__top {
   display: flex;
   align-items: center;
@@ -192,14 +191,15 @@ body {
 
     &__right {
       position: absolute;
-      top: 280px;
-      right: 100px;
+      top: 360px;
+      right: 0px;
+      transform: rotate(180deg);
 
-      #Vector {
+      #Vector2 {
         transition: fill 0.3s ease;
       }
 
-      &:hover #Vector {
+      &:hover #Vector2 {
         fill: $pinkColor;
       }
     }
@@ -257,7 +257,7 @@ body {
 
     &__line {
       margin-top: 65px;
-      border: 1px solid rgb(234, 234, 234);
+      border: 1px solid $pinkColor;
       width: 642px;
     }
 
@@ -510,37 +510,38 @@ body {
     gap: 455px;
   }
 
-  .products__description {
-    width: 826px;
-    left: 103px;
+  .products {
+    &__description {
+      width: 826px;
+      left: 103px;
+    }
+
+    &__list {
+      grid-template-columns: repeat(3, 320px);
+      gap: 15px;
+    }
+
+    &__items {
+      &__img {
+        width: 320px;
+      }
+    }
   }
 
-  .products__list {
-    grid-template-columns: repeat(3, 320px);
-    gap: 15px;
-  }
+  .footer {
+    &__left {
+      left: 68px;
+      top: 123px;
+    }
 
-  .products__items__img {
-    width: 320px;
-  }
+    &__right {
+      left: 466px;
+      top: 143px;
+    }
 
-  .main__feature {
-    grid-template-columns: repeat(3, 318px);
-    gap: 20px;
-  }
-
-  .footer__left {
-    left: 68px;
-    top: 123px;
-  }
-
-  .footer__right {
-    left: 466px;
-    top: 143px;
-  }
-
-  .footer__bottom {
-    gap: 324px;
+    &__bottom {
+      gap: 324px;
+    }
   }
 }
 
@@ -553,38 +554,166 @@ body {
     gap: 333px;
   }
 
-  .products__description {
-    width: 766px;
-    left: 0;
+  .products {
+    &__description {
+      width: 766px;
+      left: 0;
+    }
+
+    &__list {
+      grid-template-columns: repeat(2, 360px);
+    }
+
+    &__items {
+      &__img {
+        width: 360px;
+      }
+
+      &:nth-child(3) {
+        display: none;
+      }
+    }
   }
 
-  .products__items:nth-child(3) {
-    display: none;
-  }
+  .footer {
+    &__img {
+      min-height: 693px;
+    }
 
-  .products__list {
-    grid-template-columns: repeat(2, 360px);
-  }
+    &__left {
+      left: 200px;
+      top: 106px;
+    }
 
-  .products__items__img {
-    width: 360px;
-  }
+    &__right {
+      left: 120px;
+      top: 398px;
+    }
 
-  .footer__img {
-    min-height: 693px;
+    &__bottom {
+      gap: 200px;
+    }
   }
+}
 
-  .footer__left {
-    left: 200px;
-    top: 106px;
-  }
-
-  .footer__right {
-    left: 120px;
-    top: 398px;
-  }
-
-  .footer__bottom {
+@media (max-width: 426px) {
+  .header {
     gap: 200px;
+
+    &__nav__right__svg_link {
+      display: none;
+    }
   }
+
+  .main__top {
+    gap: 32px;
+    flex-direction: column;
+  }
+
+  .products {
+    &__info {
+      padding-top: 85px;
+      height: 624px;
+
+      &__img {
+        height: 454px;
+      }
+
+      &__right {
+        top: 263px;
+      }
+
+      &__left {
+        top: 267px;
+      }
+    }
+
+    &__description {
+      position: static;
+      width: 424px;
+
+      &__text {
+        width: 326px;
+        margin-top: 32px;
+      }
+
+      &__line {
+        margin-top: 32px;
+        width: 175px;
+      }
+
+      &__summary {
+        margin-top: 50px;
+        font-size: 10px;
+      }
+    }
+
+    &__list {
+      grid-template-columns: repeat(1, 360px);
+      gap: 0;
+      margin-top: 64px;
+      margin-bottom: 64px;
+    }
+  }
+
+  .footer {
+    &__img {
+      min-height: 693px;
+      object-fit: cover;
+    }
+
+    &__left {
+      left: 33px;
+      top: 64px;
+    }
+
+    &__right {
+      left: 40px;
+      top: 317px;
+      width: 348px;
+
+      &__input {
+        width: 210px;
+      }
+
+      &__button {
+        right: 0;
+      }
+    }
+
+    &__bottom {
+      gap: 25px;
+      flex-direction: column-reverse;
+      padding-top: 43px;
+      padding-bottom: 24px;
+
+      &__text {
+        width: 246px;
+      }
+    }
+  }
+}
+
+@media (max-width: 376px) {
+
+  .products {
+    &__description {
+      width: 373px;
+    }
+
+    &__info {
+      height: 539px;
+    }
+  }
+
+  .footer {
+    &__left {
+      left: 16px;
+    }
+
+    &__right {
+      left: 16px;
+    }
+  }
+
 }

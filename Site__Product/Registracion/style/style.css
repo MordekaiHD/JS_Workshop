@@ -18,6 +18,13 @@ body {
   gap: 859px;
   justify-content: center;
 }
+.header #checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+.header #checkbox:checked ~ .header__menu {
+  right: 0;
+}
 .header__nav__left {
   display: flex;
   gap: 41px;
@@ -80,15 +87,6 @@ body {
 }
 .header__menu .header__man__link:hover {
   color: rgb(241, 109, 127);
-}
-
-#checkbox {
-  position: absolute;
-  visibility: hidden;
-}
-
-#checkbox:checked ~ .header__menu {
-  right: 0;
 }
 
 .main__top {
@@ -374,12 +372,6 @@ body {
   .header {
     gap: 600px;
   }
-  .header__menu {
-    z-index: 1;
-  }
-  .header__nav__left {
-    padding-left: 70px;
-  }
   .main__top__title {
     margin-left: 70px;
   }
@@ -392,9 +384,6 @@ body {
   .main__registracion .main__address .main__details {
     margin-left: 70px;
   }
-  .main__button {
-    margin-left: 70px;
-  }
   .main__registracion .main__info__title {
     font-size: 20px;
   }
@@ -404,6 +393,9 @@ body {
   }
   .main__registracion .main__info__list__text {
     font-size: 20px;
+  }
+  .main__button {
+    margin-left: 70px;
   }
   .footer__img {
     min-height: 448px;
@@ -426,11 +418,8 @@ body {
   .header {
     gap: 424px;
   }
-  .header__menu {
-    z-index: 1;
-  }
-  .header__nav__left {
-    padding-left: 33px;
+  .main__top__title {
+    margin-left: 16px;
   }
   .main__registracion {
     gap: 22px;
@@ -439,9 +428,6 @@ body {
     margin: 64px 0 33px 16px;
   }
   .main__registracion .main__address .main__details {
-    margin-left: 16px;
-  }
-  .main__button {
     margin-left: 16px;
   }
   .main__registracion .main__info__title {
@@ -453,6 +439,9 @@ body {
   }
   .main__registracion .main__info__list__text {
     font-size: 16px;
+  }
+  .main__button {
+    margin-left: 16px;
   }
   .footer__img {
     min-height: 693px;
@@ -469,5 +458,92 @@ body {
   }
   .footer__bottom {
     gap: 200px;
+  }
+}
+@media (max-width: 426px) {
+  .header {
+    gap: 200px;
+  }
+  .header__nav__right__svg_link {
+    display: none;
+  }
+  .main__img {
+    display: none;
+  }
+  .main__top {
+    justify-content: center;
+  }
+  .main__top__title {
+    margin-left: 0;
+  }
+  .main__registracion {
+    flex-direction: column;
+    gap: 0;
+  }
+  .main__registracion .main__address .main__user {
+    margin: 40px 0 33px 9px;
+  }
+  .main__registracion .main__address .main__user__input {
+    width: 395px;
+  }
+  .main__registracion .main__address .main__details {
+    margin-left: 9px;
+  }
+  .main__registracion .main__address .main__details__input {
+    width: 395px;
+  }
+  .main__registracion .main__info {
+    width: 358px;
+    margin-left: 9px;
+    margin-bottom: 96px;
+  }
+  .main__registracion .main__info__title {
+    margin-top: 0;
+  }
+  .main__button {
+    margin-bottom: 40px;
+  }
+  .footer__img {
+    min-height: 693px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .footer__left {
+    left: 33px;
+    top: 64px;
+  }
+  .footer__right {
+    left: 40px;
+    top: 317px;
+    width: 348px;
+  }
+  .footer__right__input {
+    width: 210px;
+  }
+  .footer__right__button {
+    right: 0;
+  }
+  .footer__bottom {
+    gap: 25px;
+    flex-direction: column-reverse;
+    padding-top: 43px;
+    padding-bottom: 24px;
+  }
+  .footer__bottom__text {
+    width: 246px;
+  }
+}
+@media (max-width: 376px) {
+  .main__registracion .main__address .main__user__input {
+    width: 343px;
+  }
+  .main__registracion .main__address .main__details__input {
+    width: 343px;
+  }
+  .footer__left {
+    left: 16px;
+  }
+  .footer__right {
+    left: 16px;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -21,6 +21,15 @@ body {
   gap: 859px;
   justify-content: center;
 
+  #checkbox {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  #checkbox:checked~.header__menu {
+    right: 0;
+  }
+
   &__nav__left {
     display: flex;
     gap: 41px;
@@ -104,15 +113,6 @@ body {
       }
     }
   }
-}
-
-#checkbox {
-  position: absolute;
-  visibility: hidden;
-}
-
-#checkbox:checked~.header__menu {
-  right: 0;
 }
 
 .main {
@@ -439,64 +439,68 @@ body {
     gap: 600px;
   }
 
-  .header__menu {
-    z-index: 1;
+  .main {
+    &__top {
+      &__title {
+        margin-left: 70px;
+      }
+    }
+
+    &__registracion {
+      gap: 44px;
+
+      .main__address {
+        .main__user {
+          margin: 64px 0 33px 70px;
+        }
+
+        .main__details {
+          margin-left: 70px;
+        }
+      }
+
+      .main__info {
+        &__title {
+          font-size: 20px;
+        }
+
+        &__text {
+          font-size: 20px;
+          width: 520px;
+        }
+
+        &__list {
+          &__text {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    &__button {
+      margin-left: 70px;
+    }
   }
 
-  .header__nav__left {
-    padding-left: 70px;
-  }
+  .footer {
+    &__img {
+      min-height: 448px;
+      object-fit: cover;
+    }
 
-  .main__top__title {
-    margin-left: 70px;
-  }
+    &__left {
+      left: 68px;
+      top: 123px;
+    }
 
-  .main__registracion {
-    gap: 44px;
-  }
+    &__right {
+      left: 466px;
+      top: 143px;
+    }
 
-  .main__registracion .main__address .main__user {
-    margin: 64px 0 33px 70px;
-  }
-
-  .main__registracion .main__address .main__details {
-    margin-left: 70px;
-  }
-
-  .main__button {
-    margin-left: 70px;
-  }
-
-  .main__registracion .main__info__title {
-    font-size: 20px;
-  }
-
-  .main__registracion .main__info__text {
-    font-size: 20px;
-    width: 520px;
-  }
-
-  .main__registracion .main__info__list__text {
-    font-size: 20px;
-  }
-
-  .footer__img {
-    min-height: 448px;
-    object-fit: cover;
-  }
-
-  .footer__left {
-    left: 68px;
-    top: 123px;
-  }
-
-  .footer__right {
-    left: 466px;
-    top: 143px;
-  }
-
-  .footer__bottom {
-    gap: 324px;
+    &__bottom {
+      gap: 324px;
+    }
   }
 }
 
@@ -505,59 +509,188 @@ body {
     gap: 424px;
   }
 
-  .header__menu {
-    z-index: 1;
+  .main {
+
+    &__top {
+      &__title {
+        margin-left: 16px;
+      }
+    }
+
+    &__registracion {
+      gap: 22px;
+
+      .main__address {
+        .main__user {
+          margin: 64px 0 33px 16px;
+        }
+
+        .main__details {
+          margin-left: 16px;
+        }
+      }
+
+      .main__info {
+        &__title {
+          font-size: 16px;
+        }
+
+        &__text {
+          font-size: 16px;
+          width: 354px;
+        }
+
+        &__list {
+          &__text {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    &__button {
+      margin-left: 16px;
+    }
   }
 
-  .header__nav__left {
-    padding-left: 33px;
+  .footer {
+    &__img {
+      min-height: 693px;
+      object-fit: cover;
+    }
+
+    &__left {
+      left: 200px;
+      top: 106px;
+    }
+
+    &__right {
+      left: 120px;
+      top: 398px;
+    }
+
+    &__bottom {
+      gap: 200px;
+    }
+  }
+}
+
+@media (max-width: 426px) {
+  .header {
+    gap: 200px;
+
+    &__nav__right__svg_link {
+      display: none;
+    }
   }
 
-  .main__registracion {
-    gap: 22px;
+  .main {
+    &__img {
+      display: none;
+    }
+
+    &__top {
+      justify-content: center;
+
+      &__title {
+        margin-left: 0;
+      }
+    }
+
+    &__registracion {
+      flex-direction: column;
+      gap: 0;
+
+      .main__address {
+
+        .main__user {
+          margin: 40px 0 33px 9px;
+
+          &__input {
+            width: 395px;
+          }
+        }
+
+        .main__details {
+          margin-left: 9px;
+
+          &__input {
+            width: 395px;
+          }
+        }
+
+
+      }
+
+      .main__info {
+        width: 358px;
+        margin-left: 9px;
+        margin-bottom: 96px;
+
+        &__title {
+          margin-top: 0;
+        }
+      }
+    }
+
+    &__button {
+      margin-bottom: 40px;
+    }
   }
 
-  .main__registracion .main__address .main__user {
-    margin: 64px 0 33px 16px;
+  .footer {
+    &__img {
+      min-height: 693px;
+      object-fit: cover;
+    }
+
+    &__left {
+      left: 33px;
+      top: 64px;
+    }
+
+    &__right {
+      left: 40px;
+      top: 317px;
+      width: 348px;
+
+      &__input {
+        width: 210px;
+      }
+
+      &__button {
+        right: 0;
+      }
+    }
+
+    &__bottom {
+      gap: 25px;
+      flex-direction: column-reverse;
+      padding-top: 43px;
+      padding-bottom: 24px;
+
+      &__text {
+        width: 246px;
+      }
+    }
+  }
+}
+
+@media (max-width: 376px) {
+
+  .main__registracion .main__address .main__user__input {
+    width: 343px;
   }
 
-  .main__registracion .main__address .main__details {
-    margin-left: 16px;
-  }
-
-  .main__button {
-    margin-left: 16px;
-  }
-
-  .main__registracion .main__info__title {
-    font-size: 16px;
-  }
-
-  .main__registracion .main__info__text {
-    font-size: 16px;
-    width: 354px;
-  }
-
-  .main__registracion .main__info__list__text {
-    font-size: 16px;
-  }
-
-  .footer__img {
-    min-height: 693px;
-    object-fit: cover;
+  .main__registracion .main__address .main__details__input {
+    width: 343px;
   }
 
   .footer__left {
-    left: 200px;
-    top: 106px;
+    left: 16px;
   }
 
   .footer__right {
-    left: 120px;
-    top: 398px;
-  }
-
-  .footer__bottom {
-    gap: 200px;
+    left: 16px;
   }
 }
