@@ -20,6 +20,8 @@
 
 const images = document.querySelectorAll('.dog__img');
 const indicators = document.querySelectorAll('.indicators');
+const button__next = document.querySelector('.button__next');
+const button__backward = document.querySelector('.button__backward');
 let currentIndex = 0;
 
 function updateSlider(index) {
@@ -30,19 +32,19 @@ function updateSlider(index) {
   indicators[index].classList.add('active');
 }
 
-document.querySelector('.button__next').addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % images.length; // Циклический переход к следующему изображению
+button__next.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % images.length;
   updateSlider(currentIndex);
 });
 
-document.querySelector('.button__backward').addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + images.length) % images.length; // Циклический переход к предыдущему изображению
+button__backward.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
   updateSlider(currentIndex);
 });
 
 indicators.forEach(indicator => {
   indicator.addEventListener('click', (event) => {
-    currentIndex = parseInt(event.target.getAttribute('data-index')); // Получаем индекс из атрибута data-index
+    currentIndex = parseInt(event.target.getAttribute('data-index'));
     updateSlider(currentIndex);
   });
 });
