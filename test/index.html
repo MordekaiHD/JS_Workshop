@@ -6,24 +6,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style/style.css">
   <title>Document</title>
+  
 </head>
 
 <body>
-
-  <h1>Отзывы о продуктах</h1>
-
-  <!-- Форма для добавления отзыва -->
-  <div class="review-form">
-    <h3>Оставьте ваш отзыв</h3>
-    <textarea class="review-text" placeholder="Введите ваш отзыв" rows="5" cols="50"></textarea><br><br>
-    <button class="submit-review">Отправить отзыв</button>
-    <p class="error-message error"></p>
+  
+  <div class="questions">
+    <div class="issue1">
+      <h3 class="issue__title">
+        Вопрос №1: какой ваш любимый цвет ?
+      </h3>
+      
+      <label for="blue">
+        <input type="radio" id="blue" name="color">Синий
+      </label>
+      
+      <label for="green">
+        <input type="radio" id="green" name="color">Зелёный
+      </label>
+      
+      <label for="red">
+        <input type="radio" id="red" name="color">Красный
+      </label>
+    </div>
+    <div class="issue2">
+      <h3 class="issue__title">
+        Вопрос №2: Какое ваше любимое животное ?
+      </h3>
+      
+      <label for="Dog">
+        <input type="radio" id="Dog" name="animal">Собака
+      </label>
+      
+      <label for="Cat">
+        <input type="radio" id="Cat" name="animal">Кот
+      </label>
+      
+      
+      <label for="Parrot">
+        <input type="radio" id="Parrot" name="animal">Попугай
+      </label>
+    </div>
   </div>
-
-  <!-- Контейнер для отображения отзывов -->
-  <div class="reviews-container"></div>
-
-  <script src="js.js"></script>
+  
+  <button class="button__submit">Завершить опрос</button>
+  
+  <div class="result" style="display: none;">
+    <p>Результаты опроса:</p>
+    <p class="result__q1">Вопрос №1:<span></span></p>
+    <p class="result__q2">Вопрос №1:<span></span></p>
+  </div>
+  
+  
+  
+  <script>
+    const button = document.querySelector('.button__submit');
+    const result = document.querySelector('.result');
+    const q1 = document.querySelector('.result__q1').querySelector('span');
+    const q2 = document.querySelector('.result__q2').querySelector('span');
+  </script>
 </body>
 
 </html>
