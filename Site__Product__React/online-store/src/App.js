@@ -2,10 +2,9 @@
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Main from './components/Catalog/Main';
-import './components/style/style.css';
 import { BrowserRouter as Router } from 'react-router-dom';
-
-
+import './Style/StyleHeader/style.css';
+import './Style/StyleFooter/style.css';
 
 function App() {
   return (

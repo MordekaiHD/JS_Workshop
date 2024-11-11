@@ -1,0 +1,263 @@
+$pinkColor: rgb(241, 109, 127);
+$blackColor: rgb(34, 34, 36);
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Lato", system-ui;
+  font-style: normal;
+  overflow-x: hidden;
+}
+
+.footer {
+  position: relative;
+
+  &__img {
+    display: flex;
+    width: 100vw;
+    height: 448px;
+    object-fit: cover;
+  }
+
+  &__left {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    width: 359.45px;
+    height: 225px;
+    left: 230.29px;
+    right: 1010.26px;
+    top: 97px;
+    bottom: 126px;
+    color: $blackColor;
+    font-size: 20px;
+    font-weight: 400;
+    gap: 20px;
+
+    &__span {
+      font-style: italic;
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
+
+  &__right {
+    position: absolute;
+    width: 557px;
+    height: 142px;
+    left: 813px;
+    right: 230px;
+    top: 150px;
+    bottom: 156px;
+    text-align: center;
+
+    &__title {
+      color: $blackColor;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    &__text {
+      margin-top: 5px;
+      color: $blackColor;
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    &__input {
+      position: relative;
+      width: 210px;
+      height: 50px;
+      margin-top: 32px;
+      margin-right: 97px;
+      background: rgb(225, 225, 225);
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+      border: none;
+      padding-left: 22px;
+      padding-right: 14px;
+    }
+
+    &__input:focus {
+      outline: none;
+    }
+
+    &__button {
+      position: absolute;
+      top: 88px;
+      right: 105px;
+      border: none;
+      background-color: $pinkColor;
+      font-size: 14px;
+      font-weight: 400;
+      color: #fff;
+      width: 100px;
+      height: 49px;
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
+      transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+
+    &__button:hover {
+      color: $pinkColor;
+      background-color: #fff;
+      border: 1px solid $pinkColor;
+    }
+
+    &__button:active {
+      transform: scale(0.95);
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    height: 79px;
+    background-color: rgb(34, 34, 36);
+    color: #fff;
+    gap: 655px;
+    justify-content: center;
+
+    &__text {
+      width: 332px;
+    }
+
+    &__right {
+      display: flex;
+      gap: 7px;
+
+      &__svg path.black-fill {
+        fill: black;
+        transition: fill 0.3s ease;
+      }
+
+      &__svg:hover path.black-fill {
+        fill: #fff;
+      }
+
+      &__link {
+        path {
+          transition: fill 0.3s ease;
+        }
+
+        &:hover {
+          path {
+            fill: $pinkColor;
+          }
+
+          g path {
+            fill: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .footer {
+    &__img {
+      min-height: 448px;
+      object-fit: cover;
+    }
+
+    &__left {
+      left: 68px;
+      top: 123px;
+    }
+
+    &__right {
+      left: 466px;
+      top: 143px;
+    }
+
+    &__bottom {
+      gap: 324px;
+
+    }
+  }
+}
+
+@media (max-width: 768px) {
+
+  .footer {
+    &__img {
+      min-height: 693px;
+      object-fit: cover;
+    }
+
+    &__left {
+      left: 200px;
+      top: 106px;
+    }
+
+    &__right {
+      left: 120px;
+      top: 398px;
+    }
+
+    &__bottom {
+      gap: 200px;
+    }
+  }
+}
+
+@media (max-width: 426px) {
+
+  .footer {
+    &__img {
+      min-height: 693px;
+      object-fit: cover;
+    }
+
+    &__left {
+      left: 33px;
+      top: 64px;
+    }
+
+    &__right {
+      left: 40px;
+      top: 317px;
+      width: 348px;
+
+      &__input {
+        width: 210px;
+      }
+
+      &__button {
+        right: 0;
+      }
+    }
+
+    &__bottom {
+      gap: 25px;
+      flex-direction: column-reverse;
+      padding-top: 43px;
+      padding-bottom: 24px;
+
+      &__text {
+        width: 246px;
+      }
+    }
+  }
+}
+
+@media (max-width: 376px) {
+
+  .footer {
+    &__left {
+      left: 16px;
+    }
+
+    &__right {
+      left: 16px;
+    }
+  }
+}

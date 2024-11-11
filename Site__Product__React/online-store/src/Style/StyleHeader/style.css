@@ -1,0 +1,109 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Lato", system-ui;
+  font-style: normal;
+  overflow-x: hidden;
+}
+
+.header {
+  position: relative;
+  height: 75px;
+  background-color: rgb(34, 34, 36);
+  display: flex;
+  align-items: center;
+  gap: 859px;
+  justify-content: center;
+}
+.header #checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+.header #checkbox:checked ~ .header__menu {
+  right: 0;
+}
+.header__nav__left {
+  display: flex;
+  gap: 41px;
+  align-items: baseline;
+}
+.header__nav__left__link path {
+  transition: fill 0.3s ease;
+}
+.header__nav__left__link:hover path {
+  fill: rgb(241, 109, 127);
+}
+.header__nav__right {
+  display: flex;
+  gap: 33px;
+  align-items: baseline;
+}
+.header__nav__right__svg path {
+  transition: fill 0.3s ease;
+}
+.header__nav__right__svg:hover path {
+  fill: rgb(241, 109, 127);
+}
+.header__menu {
+  box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
+  background: rgb(255, 255, 255);
+  width: 232px;
+  position: absolute;
+  top: 75px;
+  right: -232px;
+  transition: right 0.5s;
+  z-index: 10;
+}
+.header__menu .header__title {
+  padding: 37px 34px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17px;
+}
+.header__menu .header__man {
+  padding-left: 33px;
+}
+.header__menu .header__man__subtitle {
+  color: rgb(241, 109, 127);
+  font-size: 14px;
+  font-weight: 400;
+}
+.header__menu .header__man__ul {
+  padding: 12px 22px 20px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+.header__menu .header__man__link {
+  text-decoration: none;
+  color: rgb(111, 110, 110);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+}
+.header__menu .header__man__link:hover {
+  color: rgb(241, 109, 127);
+}
+
+@media (max-width: 1024px) {
+  .header {
+    gap: 600px;
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    gap: 424px;
+  }
+}
+@media (max-width: 426px) {
+  .header {
+    gap: 200px;
+  }
+  .header__nav__right__svg_link {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,15 +1,16 @@
 import IndexInfo from "./IndexInfo";
 import IndexProducts from "./IndexProducts";
 import IndexProposals from "./IndexProposals";
-import "./style/style.css";
+import '../../Style/StyleIndex/style.css';
+
 
 function IndexCentral() {
   return (
-    <>
+    <main className="main">
       <IndexInfo/>
       <IndexProposals/>
       <IndexProducts/>
-    </>
+    </main>
   );
 }
 
