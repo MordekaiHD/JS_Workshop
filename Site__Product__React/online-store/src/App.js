@@ -3,6 +3,7 @@ import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Main from './components/Catalog/Main';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { CartProvider } from './components/Cart/CartContext';
 import './Style/StyleHeader/style.css';
 import './Style/StyleFooter/style.css';
 
@@ -11,7 +12,9 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        <Main />
+        <CartProvider>
+          <Main />
+        </CartProvider>
         <Footer />
       </div>
     </Router>

@@ -31,15 +31,9 @@ function Cart() {
           <div key={product.id} className="cart__product__item">
             <img className="cart__product__item__img" src={`ImgCart/product${product.id}.svg`} alt="product" />
             <div className="cart__product__item__info">
-              <h2 className="cart__product__item__title">{product.title}</h2>
+              <h2 className="cart__product__item__title">{product.name}</h2>
               <p className="cart__product__item__price cart__product__item_size">
                 Price: <span className="cart__product__item__price__span">${product.price}</span>
-              </p>
-              <p className="cart__product__item__price cart__product__item_size">
-                Color: <span className="cart__product__item__color__span">{product.color}</span>
-              </p>
-              <p className="cart__product__item__price cart__product__item_size">
-                Size: <span className="cart__product__item__size__span">{product.size}</span>
               </p>
               <p className="cart__product__item__quantity cart__product__item_size">
                 Quantity: <input

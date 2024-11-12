@@ -12,50 +12,6 @@ body {
   overflow-x: hidden;
 }
 
-.main__top {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 148px;
-  background: rgb(248, 243, 244);
-  gap: 710px;
-
-  &__title {
-    color: $pinkColor;
-    font-size: 24px;
-    font-weight: 400;
-  }
-
-  &__list {
-    display: flex;
-  }
-
-  &__link {
-    text-decoration: none;
-    color: rgb(99, 99, 99);
-    font-size: 14px;
-    font-weight: 300;
-    padding-right: 5px;
-  }
-
-
-  &__box:last-of-type &__link {
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 700;
-    color: rgb(241, 109, 127);
-  }
-
-  &__box:not(:last-child)::after {
-    content: '/';
-    padding-left: 8px;
-    padding-right: 8px;
-    color: rgb(99, 99, 99);
-    font-size: 14px;
-    font-weight: 300;
-  }
-}
-
 .products {
   position: relative;
 
@@ -71,140 +27,22 @@ body {
       height: 724px;
     }
 
-    &__left {
+    &__overlay {
       position: absolute;
-      top: 365px;
-      left: 0;
+      top: 188px;
+      left: 111px;
+      opacity: 0;
+      transition: 0.5s ease;
 
-      #Vector {
-        transition: fill 0.3s ease;
+      & .products__cart {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
       }
 
-      &:hover #Vector {
-        fill: $pinkColor;
-      }
-    }
-
-    &__right {
-      position: absolute;
-      top: 360px;
-      right: 0px;
-      transform: rotate(180deg);
-
-      #Vector2 {
-        transition: fill 0.3s ease;
-      }
-
-      &:hover #Vector2 {
-        fill: $pinkColor;
-      }
-    }
-  }
-
-  &__description {
-    position: absolute;
-    width: 1141px;
-    height: 600px;
-    top: 950px;
-    left: 180px;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid rgb(234, 234, 234);
-
-    &__top__title {
-      margin-top: 65px;
-      color: $pinkColor;
-      font-size: 14px;
-      font-weight: 300;
-    }
-
-    &__line__top {
-      width: 63px;
-      height: 3.03px;
-      background-color: $pinkColor;
-      border: none;
-      margin-top: 12px;
-    }
-
-    &__title {
-      color: rgb(77, 77, 77);
-      font-size: 18px;
-      font-weight: 300;
-      margin-top: 12px;
-    }
-
-    &__text {
-      color: rgb(94, 94, 94);
-      font-size: 14px;
-      font-weight: 300;
-      margin-top: 49px;
-      width: 548px;
-      text-align: center;
-    }
-
-    &__price {
-      margin-top: 32px;
-      color: $pinkColor;
-      font-size: 24px;
-      font-weight: 300;
-    }
-
-    &__line {
-      margin-top: 65px;
-      border: 1px solid $pinkColor;
-      width: 642px;
-    }
-
-    &__filter {
-      display: flex;
-      gap: 23px;
-      justify-content: center;
-    }
-
-    &__summary {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      color: rgb(111, 110, 110);
-      font-size: 14px;
-      font-weight: 400;
-      margin-top: 65px;
-    }
-
-    &__add {
-      transition: all 0.3s ease;
-
-      &:hover svg path {
-        fill: #fff;
-      }
-
-      margin-top: 49px;
-    }
-
-    &__button {
-      width: 212px;
-      height: 48.41px;
-      border: 1px solid $pinkColor;
-      background-color: #fff;
-      color: $pinkColor;
-      font-size: 16px;
-      font-weight: 400;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 30px;
-      transition: all 0.3s ease;
-
-      &:hover {
-        border: 1px solid rgb(255, 106, 106);
-        background: rgb(241, 109, 127);
-        color: #fff;
-      }
-
-      &:active {
-        transform: scale(0.95);
+      .products__container:hover & {
+        opacity: 1;
       }
     }
   }
@@ -247,14 +85,23 @@ body {
       font-weight: 400;
     }
   }
+
+  .products__container {
+    position: relative;
+
+    & .products__img {
+      display: block;
+      width: 100%;
+      transition: 0.5s ease;
+    }
+
+    &:hover .products__img {
+      filter: brightness(50%);
+    }
+  }
 }
 
 @media (max-width: 1024px) {
-
-  .main__top {
-    gap: 455px;
-  }
-
   .products {
     &__description {
       width: 826px;
@@ -275,10 +122,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  .main__top {
-    gap: 333px;
-  }
-
   .products {
     &__description {
       width: 766px;
@@ -302,12 +145,6 @@ body {
 }
 
 @media (max-width: 426px) {
-
-  .main__top {
-    gap: 32px;
-    flex-direction: column;
-  }
-
   .products {
     &__info {
       padding-top: 85px;
@@ -356,7 +193,6 @@ body {
 }
 
 @media (max-width: 376px) {
-
   .products {
     &__description {
       width: 373px;
@@ -366,5 +202,4 @@ body {
       height: 539px;
     }
   }
-
 }

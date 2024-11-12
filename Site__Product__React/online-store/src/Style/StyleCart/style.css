@@ -26,6 +26,7 @@ body {
   display: flex;
   flex-direction: row;
   gap: 128px;
+  margin-bottom: 50px;
 }
 .cart__product {
   display: flex;
@@ -39,10 +40,17 @@ body {
   box-shadow: 17px 19px 24px 0px rgba(0, 0, 0, 0.13);
   position: relative;
 }
+.cart__product__item__img {
+  width: 262px;
+  height: 312px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
 .cart__product__item__info {
   display: flex;
   flex-direction: column;
   padding: 22px 31px 62px;
+  gap: 5px;
 }
 .cart__product__item__title {
   padding-bottom: 42px;

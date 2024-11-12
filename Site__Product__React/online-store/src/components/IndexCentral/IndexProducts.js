@@ -1,16 +1,17 @@
 function IndexProducts() {
+
   return (
     <div className="products">
       <h2 className="products__title">Featured Items</h2>
       <p className="products__text">Shop for items based on what we featured this week</p>
 
-      <div className="products__list">
+      <div className="products__listt">
         {[1, 2, 3, 4, 5, 6].map((num) => (
           <div key={num} className="products__items">
             <div className="products__container">
               <img src={`/main/product/product${num}.svg`} alt={`product${num}`} className="products__img" />
               <div className="products__overlay">
-                <img src="/main/product/Add_to_cart.svg" alt="Add to cart" className="products__cart" />
+                <img src="/main/product/Add_to_cart.svg" alt="Add to cart" className="products__cart"/>
               </div>
             </div>
             <div className="products__items__info">

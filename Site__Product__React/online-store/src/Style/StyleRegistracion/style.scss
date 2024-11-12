@@ -12,111 +12,8 @@ body {
   overflow-x: hidden;
 }
 
-.header {
-  position: relative;
-  height: 75px;
-  background-color: $blackColor;
-  display: flex;
-  align-items: center;
-  gap: 859px;
-  justify-content: center;
-
-  #checkbox {
-    position: absolute;
-    visibility: hidden;
-  }
-
-  #checkbox:checked~.header__menu {
-    right: 0;
-  }
-
-  &__nav__left {
-    display: flex;
-    gap: 41px;
-    align-items: baseline;
-
-    &__link {
-      path {
-        transition: fill 0.3s ease;
-      }
-
-      &:hover {
-        path {
-          fill: $pinkColor;
-        }
-      }
-    }
-  }
-
-  &__nav__right {
-    display: flex;
-    gap: 33px;
-    align-items: baseline;
-
-    &__svg {
-      path {
-        transition: fill 0.3s ease;
-      }
-
-      &:hover {
-        path {
-          fill: $pinkColor;
-        }
-      }
-    }
-  }
-
-  &__menu {
-    box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
-    background: rgb(255, 255, 255);
-    width: 232px;
-    position: absolute;
-    top: 75px;
-    right: -232px;
-    transition: right 0.5s;
-    z-index: 10;
-
-    .header__title {
-      padding: 37px 34px 24px;
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 17px;
-    }
-
-    .header__man {
-      padding-left: 33px;
-
-      &__subtitle {
-        color: $pinkColor;
-        font-size: 14px;
-        font-weight: 400;
-      }
-
-      &__ul {
-        padding: 12px 22px 20px;
-        list-style-type: none;
-        display: flex;
-        flex-direction: column;
-        gap: 11px;
-      }
-
-      &__link {
-        text-decoration: none;
-        color: rgb(111, 110, 110);
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 17px;
-
-        &:hover {
-          color: $pinkColor;
-        }
-      }
-    }
-  }
-}
-
 .main {
-  &__top {
+  &__top__registracion {
     display: flex;
     align-items: center;
     height: 148px;
@@ -130,7 +27,7 @@ body {
     }
   }
 
-  &__registracion {
+  &__registration {
     display: flex;
     gap: 128px;
 
@@ -225,7 +122,7 @@ body {
 
     }
 
-    .main__info {
+    .main__informaocion {
       &__title {
         font-size: 24px;
         font-weight: 300;
@@ -286,159 +183,7 @@ body {
   }
 }
 
-.footer {
-  position: relative;
-
-  &__img {
-    display: flex;
-    width: 100vw;
-    height: 448px;
-    object-fit: cover;
-  }
-
-  &__left {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    text-align: center;
-    width: 359.45px;
-    height: 225px;
-    left: 230.29px;
-    right: 1010.26px;
-    top: 97px;
-    bottom: 126px;
-    color: $blackColor;
-    font-size: 20px;
-    font-weight: 400;
-    gap: 20px;
-
-    &__span {
-      font-style: italic;
-      font-size: 20px;
-      font-weight: 400;
-    }
-  }
-
-  &__right {
-    position: absolute;
-    width: 557px;
-    height: 142px;
-    left: 813px;
-    right: 230px;
-    top: 150px;
-    bottom: 156px;
-    text-align: center;
-
-    &__title {
-      color: $blackColor;
-      font-size: 24px;
-      font-weight: 700;
-    }
-
-    &__text {
-      margin-top: 5px;
-      color: $blackColor;
-      font-size: 18px;
-      font-weight: 400;
-    }
-
-    &__input {
-      position: relative;
-      width: 210px;
-      height: 50px;
-      margin-top: 32px;
-      margin-right: 97px;
-      background: rgb(225, 225, 225);
-      border-top-left-radius: 25px;
-      border-bottom-left-radius: 25px;
-      border: none;
-      padding-left: 22px;
-      padding-right: 14px;
-    }
-
-    &__input:focus {
-      outline: none;
-    }
-
-    &__button {
-      position: absolute;
-      top: 88px;
-      right: 105px;
-      border: none;
-      background-color: $pinkColor;
-      font-size: 14px;
-      font-weight: 400;
-      color: #fff;
-      width: 100px;
-      height: 49px;
-      border-top-right-radius: 25px;
-      border-bottom-right-radius: 25px;
-      transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-    }
-
-    &__button:hover {
-      color: $pinkColor;
-      background-color: #fff;
-      border: 1px solid $pinkColor;
-    }
-
-    &__button:active {
-      transform: scale(0.95);
-    }
-  }
-
-  &__bottom {
-    display: flex;
-    align-items: center;
-    height: 79px;
-    background-color: rgb(34, 34, 36);
-    color: #fff;
-    gap: 655px;
-    justify-content: center;
-
-    &__text {
-      width: 332px;
-    }
-
-    &__right {
-      display: flex;
-      gap: 7px;
-
-      &__svg path.black-fill {
-        fill: black;
-        transition: fill 0.3s ease;
-      }
-
-      &__svg:hover path.black-fill {
-        fill: #fff;
-      }
-
-      &__link {
-        path {
-          transition: fill 0.3s ease;
-        }
-
-        &:hover {
-          path {
-            fill: $pinkColor;
-          }
-
-          g path {
-            fill: #fff;
-          }
-        }
-      }
-    }
-  }
-}
-
 @media (max-width: 1024px) {
-  .header {
-    gap: 600px;
-  }
-
   .main {
     &__top {
       &__title {
@@ -481,34 +226,9 @@ body {
       margin-left: 70px;
     }
   }
-
-  .footer {
-    &__img {
-      min-height: 448px;
-      object-fit: cover;
-    }
-
-    &__left {
-      left: 68px;
-      top: 123px;
-    }
-
-    &__right {
-      left: 466px;
-      top: 143px;
-    }
-
-    &__bottom {
-      gap: 324px;
-    }
-  }
 }
 
 @media (max-width: 768px) {
-  .header {
-    gap: 424px;
-  }
-
   .main {
 
     &__top {
@@ -552,38 +272,9 @@ body {
       margin-left: 16px;
     }
   }
-
-  .footer {
-    &__img {
-      min-height: 693px;
-      object-fit: cover;
-    }
-
-    &__left {
-      left: 200px;
-      top: 106px;
-    }
-
-    &__right {
-      left: 120px;
-      top: 398px;
-    }
-
-    &__bottom {
-      gap: 200px;
-    }
-  }
 }
 
 @media (max-width: 426px) {
-  .header {
-    gap: 200px;
-
-    &__nav__right__svg_link {
-      display: none;
-    }
-  }
-
   .main {
     &__img {
       display: none;
@@ -635,43 +326,6 @@ body {
 
     &__button {
       margin-bottom: 40px;
-    }
-  }
-
-  .footer {
-    &__img {
-      min-height: 693px;
-      object-fit: cover;
-    }
-
-    &__left {
-      left: 33px;
-      top: 64px;
-    }
-
-    &__right {
-      left: 40px;
-      top: 317px;
-      width: 348px;
-
-      &__input {
-        width: 210px;
-      }
-
-      &__button {
-        right: 0;
-      }
-    }
-
-    &__bottom {
-      gap: 25px;
-      flex-direction: column-reverse;
-      padding-top: 43px;
-      padding-bottom: 24px;
-
-      &__text {
-        width: 246px;
-      }
     }
   }
 }
