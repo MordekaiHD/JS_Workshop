@@ -147,12 +147,6 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.products__container:hover .products__img {
-  filter: brightness(50%);
-}
-.products__container:hover .products__overlay {
-  opacity: 1;
-}
 .products__items {
   background: rgb(248, 248, 248);
 }

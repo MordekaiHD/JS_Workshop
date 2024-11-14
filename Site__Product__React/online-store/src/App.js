@@ -10,11 +10,11 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
         <CartProvider>
+          <Header />
           <Main />
+          <Footer />
         </CartProvider>
-        <Footer />
       </div>
     </Router>
   );

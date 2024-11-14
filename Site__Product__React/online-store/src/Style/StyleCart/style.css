@@ -28,6 +28,22 @@ body {
   gap: 128px;
   margin-bottom: 50px;
 }
+.cart__empty-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 652px;
+  margin-left: 230px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #555;
+  text-align: center;
+  margin-top: 94px;
+  border: 2px dashed #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
 .cart__product {
   display: flex;
   flex-direction: column;
@@ -114,7 +130,7 @@ body {
 }
 .cart__product__button {
   display: flex;
-  gap: 192px;
+  gap: 184px;
 }
 .cart__product__button__clear {
   width: 235px;

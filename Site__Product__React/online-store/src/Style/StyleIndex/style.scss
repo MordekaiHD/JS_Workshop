@@ -170,16 +170,6 @@ body {
         object-fit: cover;
       }
     }
-
-    &:hover {
-      .products__img {
-        filter: brightness(50%);
-      }
-
-      .products__overlay {
-        opacity: 1;
-      }
-    }
   }
 
   &__items {

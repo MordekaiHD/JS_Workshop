@@ -21,6 +21,7 @@ body {
   gap: 859px;
   justify-content: center;
 
+
   #checkbox {
     position: absolute;
     visibility: hidden;
@@ -55,6 +56,8 @@ body {
     align-items: baseline;
 
     &__svg {
+      position: relative;
+
       path {
         transition: fill 0.3s ease;
       }
@@ -63,6 +66,18 @@ body {
         path {
           fill: $pinkColor;
         }
+      }
+
+      .cart-quantity {
+        position: absolute;
+        top: -7px;
+        right: -13px;
+        background-color: $pinkColor;
+        color: white;
+        border-radius: 25px;
+        padding: 2px 6px;
+        font-size: 12px;
+        font-weight: bold;
       }
     }
   }

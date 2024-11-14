@@ -11,7 +11,7 @@ function Main() {
       <Routes>
         <Route path="/" element={<IndexCentral />} />
         <Route path="/catalog" element={<CatalogCentral />} />
-        <Route path="/product" element={<ProductCentral />} />
+        <Route path="/product/:id" element={<ProductCentral />} />
         <Route path="/cart" element={<CartCentrale />} />
         <Route path="/registracion" element={<Registracion />} />
       </Routes>

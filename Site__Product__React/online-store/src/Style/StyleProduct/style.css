@@ -98,8 +98,11 @@ body {
 }
 .products__description__filter {
   display: flex;
-  gap: 23px;
+  gap: 70px;
   justify-content: center;
+}
+.products__description__details {
+  position: relative;
 }
 .products__description__summary {
   display: flex;
@@ -110,9 +113,112 @@ body {
   font-weight: 400;
   margin-top: 65px;
 }
+.products__description__options__color {
+  position: absolute;
+  top: 84px;
+  right: -25px;
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 7px;
+  border: solid 1px rgb(241, 109, 127);
+  border-radius: 5px;
+}
+.products__description__options__color .color-option {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+}
+.products__description__options__color .color-option input {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.products__description__options__color .color-label {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+  border: 2px solid #ccc;
+  transition: transform 0.2s ease;
+}
+.products__description__options__color .color-option input:checked + .color-label {
+  transform: scale(1.05);
+  border-color: rgb(241, 109, 127);
+}
+.products__description__options__color .color-option input:focus + .color-label {
+  outline: 2px solid rgb(241, 109, 127);
+}
+.products__description__options__color .color-option:hover .color-label {
+  border-color: rgb(241, 109, 127);
+}
+.products__description__options__size {
+  position: absolute;
+  top: 84px;
+  right: -8px;
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 7px;
+  border: solid 1px rgb(241, 109, 127);
+  border-radius: 5px;
+}
+.products__description__options__size .color-option {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+}
+.products__description__options__size .color-option input {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.products__description__options__size .color-label {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+  border: 2px solid #ccc;
+  transition: transform 0.2s ease;
+}
+.products__description__options__size .color-option input:checked + .color-label {
+  transform: scale(1.05);
+  border-color: rgb(241, 109, 127);
+}
+.products__description__options__size .color-option input:focus + .color-label {
+  outline: 2px solid rgb(241, 109, 127);
+}
+.products__description__options__size .color-option:hover .color-label {
+  border-color: rgb(241, 109, 127);
+}
+.products__description__options__quantity {
+  position: absolute;
+  top: 84px;
+  right: -3px;
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  height: 34px;
+}
+.products__description__quantity {
+  width: 70px;
+  text-align: center;
+  border: solid 1px rgb(241, 109, 127);
+  border-radius: 5px;
+  padding: 7px;
+  padding-left: 18px;
+}
 .products__description__add {
   transition: all 0.3s ease;
-  margin-top: 49px;
+  margin-top: 80px;
 }
 .products__description__add:hover svg path {
   fill: #fff;

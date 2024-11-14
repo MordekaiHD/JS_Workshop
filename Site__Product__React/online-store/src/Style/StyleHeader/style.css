@@ -41,11 +41,25 @@ body {
   gap: 33px;
   align-items: baseline;
 }
+.header__nav__right__svg {
+  position: relative;
+}
 .header__nav__right__svg path {
   transition: fill 0.3s ease;
 }
 .header__nav__right__svg:hover path {
   fill: rgb(241, 109, 127);
+}
+.header__nav__right__svg .cart-quantity {
+  position: absolute;
+  top: -7px;
+  right: -13px;
+  background-color: rgb(241, 109, 127);
+  color: white;
+  border-radius: 25px;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: bold;
 }
 .header__menu {
   box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);

@@ -115,8 +115,12 @@ body {
 
     &__filter {
       display: flex;
-      gap: 23px;
+      gap: 70px;
       justify-content: center;
+    }
+
+    &__details {
+      position: relative;
     }
 
     &__summary {
@@ -129,6 +133,125 @@ body {
       margin-top: 65px;
     }
 
+    &__options__color {
+      position: absolute;
+      top: 84px;
+      right: -25px;
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      padding: 7px;
+      border: solid 1px $pinkColor;
+      border-radius: 5px;
+
+      .color-option {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .color-option input {
+        position: absolute;
+        left: 0;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      .color-label {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-right: 8px;
+        border: 2px solid #ccc;
+        transition: transform 0.2s ease;
+      }
+
+      .color-option input:checked+.color-label {
+        transform: scale(1.05);
+        border-color: $pinkColor;
+      }
+
+      .color-option input:focus+.color-label {
+        outline: 2px solid $pinkColor;
+      }
+
+      .color-option:hover .color-label {
+        border-color: $pinkColor;
+      }
+    }
+
+    &__options__size {
+      position: absolute;
+      top: 84px;
+      right: -8px;
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      padding: 7px;
+      border: solid 1px $pinkColor;
+      border-radius: 5px;
+
+      .color-option {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .color-option input {
+        position: absolute;
+        left: 0;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      .color-label {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-right: 8px;
+        border: 2px solid #ccc;
+        transition: transform 0.2s ease;
+      }
+
+      .color-option input:checked+.color-label {
+        transform: scale(1.05);
+        border-color: $pinkColor;
+      }
+
+      .color-option input:focus+.color-label {
+        outline: 2px solid $pinkColor;
+      }
+
+      .color-option:hover .color-label {
+        border-color: $pinkColor;
+      }
+    }
+
+    &__options__quantity {
+      position: absolute;
+      top: 84px;
+      right: -3px;
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      height: 34px;
+    }
+
+    &__quantity {
+      width: 70px;
+      text-align: center;
+      border: solid 1px $pinkColor;
+      border-radius: 5px;
+      padding: 7px;
+      padding-left: 18px;
+    }
+
     &__add {
       transition: all 0.3s ease;
 
@@ -136,7 +259,7 @@ body {
         fill: #fff;
       }
 
-      margin-top: 49px;
+      margin-top: 80px;
     }
 
     &__button {
