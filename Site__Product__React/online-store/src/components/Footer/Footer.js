@@ -1,12 +1,9 @@
-import foto from '../Footer/footer/foto.svg'
-import background from '../Footer/footer/background.svg'
-
 function Footer() {
   return (
     <footer className="footer">
-      <img src={background} alt="background" className="footer__img" />
+      <img src="/ImgFooter/background.svg" alt="background" className="footer__img" />
       <div className="footer__left">
-        <img src={foto} alt="foto" className="footer__left__img" />
+        <img src="/ImgFooter/foto.svg" alt="foto" className="footer__left__img" />
         <p className="footer__left__text">
           &laquo;Vestibulum quis porttitor dui! Quisque viverra nunc&nbsp;mi,
           <span className="footer__left__span"> a&nbsp;pulvinar purus condimentum&raquo;</span>

@@ -60,6 +60,7 @@ body {
   box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
   background: rgb(255, 255, 255);
   width: 370px;
+  z-index: 100;
 }
 .main__filter__extensive__details[open] path {
   fill: rgb(241, 109, 127);
@@ -138,6 +139,7 @@ body {
   gap: 6px;
   top: 20px;
   left: -6px;
+  z-index: 100;
 }
 .main__filter__sort__details__lable {
   display: flex;
@@ -176,14 +178,41 @@ body {
   text-align: center;
 }
 
-.products__list {
+.products__lists {
   display: grid;
   grid-template-columns: repeat(3, 360px);
   gap: 30px;
   justify-content: center;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .products__items {
   background: rgb(248, 248, 248);
+  position: relative;
+}
+.products__items .products__items__img {
+  display: block;
+  width: 100%;
+  transition: 0.5s ease;
+}
+.products__items .products__overlay {
+  position: absolute;
+  top: 188px;
+  left: 111px;
+  opacity: 0;
+  transition: 0.5s ease;
+}
+.products__items .products__overlay .products__cart {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.products__items:hover .products__items__img {
+  filter: brightness(50%);
+}
+.products__items:hover .products__overlay {
+  opacity: 1;
 }
 .products__items__info {
   margin-top: 23px;
@@ -221,18 +250,32 @@ body {
 }
 .pagination__section__left {
   padding-right: 16px;
+  background: none;
+  border: none;
 }
 .pagination__section__link {
   text-decoration: none;
   font-size: 16px;
   font-weight: 300;
   color: rgb(196, 196, 196);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
 }
 .pagination__section__link:hover {
   color: rgb(241, 109, 127);
 }
+.pagination__section__link.active {
+  color: rgb(241, 109, 127);
+}
+.pagination__section__link:hover:not(.active) {
+  color: rgb(34, 34, 36);
+}
 .pagination__section__right {
   padding-left: 16px;
+  background: none;
+  border: none;
 }
 
 @media (max-width: 1024px) {

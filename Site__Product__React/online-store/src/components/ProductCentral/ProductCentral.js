@@ -1,5 +1,5 @@
 import '../../Style/StyleProduct/style.css';
-import MainTop from '../Catalog/MainTop';
+import MainTop from '../Catalog/MainTop/MainTop';
 import Products from './Products/Products';
 
 

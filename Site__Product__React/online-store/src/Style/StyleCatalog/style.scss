@@ -12,7 +12,6 @@ body {
   overflow-x: hidden;
 }
 
-
 .main {
   &__top {
     display: flex;
@@ -74,6 +73,7 @@ body {
           box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
           background: rgb(255, 255, 255);
           width: 370px;
+          z-index: 100;
         }
 
         &[open] path {
@@ -167,6 +167,7 @@ body {
         gap: 6px;
         top: 20px;
         left: -6px;
+        z-index: 100;
       }
 
       &__details__lable {
@@ -215,15 +216,48 @@ body {
 }
 
 .products {
-  &__list {
+  &__lists {
     display: grid;
     grid-template-columns: repeat(3, 360px);
     gap: 30px;
     justify-content: center;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   &__items {
     background: rgb(248, 248, 248);
+    position: relative;
+
+    .products__items__img {
+      display: block;
+      width: 100%;
+      transition: 0.5s ease;
+    }
+
+    .products__overlay {
+      position: absolute;
+      top: 188px;
+      left: 111px;
+      opacity: 0;
+      transition: 0.5s ease;
+
+      .products__cart {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &:hover {
+      .products__items__img {
+        filter: brightness(50%);
+      }
+
+      .products__overlay {
+        opacity: 1;
+      }
+    }
 
     &__info {
       margin-top: 23px;
@@ -266,6 +300,8 @@ body {
 
   &__left {
     padding-right: 16px;
+    background: none;
+    border: none;
   }
 
   &__link {
@@ -273,16 +309,31 @@ body {
     font-size: 16px;
     font-weight: 300;
     color: rgb(196, 196, 196);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s, background-color 0.3s;
+
+    &:hover {
+      color: $pinkColor;
+    }
+
+    &.active {
+      color: $pinkColor;
+    }
+
+    &:hover:not(.active) {
+      color: $blackColor;
+    }
   }
 
-  &__link:hover {
-    color: $pinkColor;
-  }
+
 
   &__right {
     padding-left: 16px;
+    background: none;
+    border: none;
   }
-
 }
 
 

@@ -1,10 +1,9 @@
-import CartCentrale from "../Cart/CartCentrale";
-import IndexCentral from "../IndexCentral/IndexCentral";
-import ProductCentral from "../ProductCentral/ProductCentral";
-import Registracion from "../Registracion/Registracion";
-import CatalogCentral from "./CatalogCentral";
+import CartCentrale from "./Cart/CartCentrale";
+import IndexCentral from "./IndexCentral/IndexCentral";
+import ProductCentral from "./ProductCentral/ProductCentral";
+import Registracion from "./Registracion/Registracion";
+import CatalogCentral from "./Catalog/CatalogCentral";
 import { Routes, Route } from 'react-router-dom';
-
 
 function Main() {
   return (

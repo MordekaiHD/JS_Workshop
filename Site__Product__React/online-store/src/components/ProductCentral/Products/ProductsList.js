@@ -1,33 +1,25 @@
+import { useCart } from '../../Cart/CartContext';
+import products from '../../ProductJSON/productsList';
+
 function ProductsList() {
+
+  const { addToCart } = useCart();
+
   return (
-    <div class="products__list">
-      <div class="products__items">
-        <img src="/ImgProductCentrale/product4.svg" alt="product4" class="products__items__img"></img>
-        <div class="products__items__info">
-          <h2 class="products__items__title">ELLERY X M'O CAPSULE</h2>
-          <p class="products__items__text">Known for her sculptural takes on traditional tailoring, Australian arbiter
-            of cool Kym Ellery teams up with Moda Operandi.</p>
-          <p class="products__items__price">$52.00</p>
+    <div className="products__list">
+      {products.map(product => (
+        <div key={product.id} className="products__items">
+          <img src={product.image} alt={product.title} className="products__items__img" />
+          <div className="products__overlay">
+            <img src="/main/product/Add_to_cart.svg" alt="Add to cart" className="products__cart" onClick={() => addToCart(product)} />
+          </div>
+          <div className="products__items__info">
+            <h2 className="products__items__title">{product.title}</h2>
+            <p className="products__items__text">{product.description}</p>
+            <p className="products__items__price">${product.price.toFixed(2)}</p>
+          </div>
         </div>
-      </div>
-      <div class="products__items">
-        <img src="/ImgProductCentrale/product5.svg" alt="product5" class="products__items__img"></img>
-        <div class="products__items__info">
-          <h2 class="products__items__title">ELLERY X M'O CAPSULE</h2>
-          <p class="products__items__text">Known for her sculptural takes on traditional tailoring, Australian arbiter
-            of cool Kym Ellery teams up with Moda Operandi.</p>
-          <p class="products__items__price">$52.00</p>
-        </div>
-      </div>
-      <div class="products__items">
-        <img src="/ImgProductCentrale/product6.svg" alt="product6" class="products__items__img"></img>
-        <div class="products__items__info">
-          <h2 class="products__items__title">ELLERY X M'O CAPSULE</h2>
-          <p class="products__items__text">Known for her sculptural takes on traditional tailoring, Australian arbiter
-            of cool Kym Ellery teams up with Moda Operandi.</p>
-          <p class="products__items__price">$52.00</p>
-        </div>
-      </div>
+      ))}
     </div>
   );
 }

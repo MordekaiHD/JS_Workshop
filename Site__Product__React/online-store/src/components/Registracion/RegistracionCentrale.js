@@ -1,26 +1,82 @@
 import '../../Style/StyleRegistracion/style.css';
+import React, { useState } from "react";
+
 function RegistracionCentrale() {
+
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    gender: "",
+    email: "",
+    password: "",
+  });
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const validate = () => {
+    const newErrors = {};
+
+    if (!formData.firstname.match(/^[A-Za-z]+$/)) {
+      newErrors.firstname = "Only letters are allowed.";
+    }
+    if (!formData.lastname.match(/^[A-Za-z]+$/)) {
+      newErrors.lastname = "Only letters are allowed.";
+    }
+
+    if (!formData.gender) {
+      newErrors.gender = "Please select your gender.";
+    }
+
+    if (!formData.email.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)) {
+      newErrors.email = "Please enter a valid email address.";
+    }
+
+    if (!formData.password.match(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/)) {
+      newErrors.password =
+        "Password must be at least 8 characters with at least 1 number, 1 uppercase and 1 lowercase letter.";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validate()) {
+      console.log("Form submitted successfully", formData);
+    } else {
+      console.log("Form contains errors.");
+    }
+  };
   return (
     <div className="main__registration">
-      <form className="main__address">
+      <form className="main__address" onSubmit={handleSubmit}>
         <div className="main__user">
           <h2 className="main__user__title">Your Name</h2>
           <input
             type="text"
             placeholder="First Name"
             name="firstname"
-            pattern="[A-Za-z]+"
-            required
+            value={formData.firstname}
+            onChange={handleChange}
             className="main__user__input"
           />
+          {errors.firstname && <p className="error">{errors.firstname}</p>}
+
           <input
             type="text"
             placeholder="Last Name"
             name="lastname"
-            pattern="[A-Za-z]+"
-            required
+            value={formData.lastname}
+            onChange={handleChange}
             className="main__user__input"
           />
+          {errors.lastname && <p className="error">{errors.lastname}</p>}
+
           <div className="main__user__chekbox">
             <input
               type="radio"
@@ -45,28 +101,36 @@ function RegistracionCentrale() {
             />
             <label htmlFor="checkbox3" className="main__user__checkbox__label2">Other</label>
           </div>
+          {errors.gender && <p className="error">{errors.gender}</p>}
         </div>
+
         <div className="main__details">
           <h2 className="main__details__title">Login details</h2>
+
           <input
             type="email"
             placeholder="Email"
             name="email"
-            required
+            value={formData.email}
+            onChange={handleChange}
             className="main__details__input"
           />
+          {errors.email && <p className="error">{errors.email}</p>}
+
           <input
             type="password"
             placeholder="Password"
             name="password"
-            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-            required
+            value={formData.password}
+            onChange={handleChange}
             className="main__details__input"
           />
           <p className="main__details__text">
             Please use 8 or more characters, with at least 1 number and a mixture of uppercase and lowercase letters
           </p>
+          {errors.password && <p className="error">{errors.password}</p>}
         </div>
+
         <button type="button" className="main__button">
           JOIN NOW
           <svg width="17.000977" height="9.918610" viewBox="0 0 17.001 9.91861" fill="none" xmlns="http://www.w3.org/2000/svg">

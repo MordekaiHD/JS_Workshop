@@ -1,5 +1,5 @@
-import FilterExtensive from "./FilterOptions/FilterExtensive";
-import FilterSort from "./FilterOptions/FilterSort";
+import FilterExtensive from "../MainFilter/FilterOptions/FilterExtensive";
+import FilterSort from "../MainFilter/FilterOptions/FilterSort";
 
 function MainFilter() {
   return (

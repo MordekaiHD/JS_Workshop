@@ -1,25 +1,24 @@
+import { useCart } from "../Cart/CartContext";
+import products from '../ProductJSON/products';
+
 function IndexProducts() {
+  const { addToCart } = useCart();
 
   return (
     <div className="products">
       <h2 className="products__title">Featured Items</h2>
       <p className="products__text">Shop for items based on what we featured this week</p>
-
-      <div className="products__listt">
-        {[1, 2, 3, 4, 5, 6].map((num) => (
-          <div key={num} className="products__items">
-            <div className="products__container">
-              <img src={`/main/product/product${num}.svg`} alt={`product${num}`} className="products__img" />
-              <div className="products__overlay">
-                <img src="/main/product/Add_to_cart.svg" alt="Add to cart" className="products__cart"/>
-              </div>
+      <div className="products__lists">
+        {products.map(product => (
+          <div key={product.id} className="products__items">
+            <img src={product.image} alt={product.title} className="products__items__img" />
+            <div className="products__overlay">
+              <img src="/main/product/Add_to_cart.svg" alt="Add to cart" className="products__cart" onClick={() => addToCart(product)} />
             </div>
             <div className="products__items__info">
-              <h2 className="products__items__title">ELLERY X M'O CAPSULE</h2>
-              <p className="products__items__text">
-                Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.
-              </p>
-              <p className="products__items__price">$52.00</p>
+              <h2 className="products__items__title">{product.title}</h2>
+              <p className="products__items__text">{product.description}</p>
+              <p className="products__items__price">${product.price.toFixed(2)}</p>
             </div>
           </div>
         ))}

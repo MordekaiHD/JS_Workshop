@@ -1,4 +1,3 @@
-// CartContext.js
 import React, { createContext, useContext, useState } from 'react';
 
 const CartContext = createContext();
@@ -8,7 +7,6 @@ export const useCart = () => useContext(CartContext);
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  // Функция для добавления товара в корзину
   const addToCart = (product) => {
     setCart(prevCart => {
       const productExists = prevCart.find(item => item.id === product.id);
