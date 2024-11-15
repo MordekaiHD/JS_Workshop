@@ -9,6 +9,10 @@ body {
   overflow-x: hidden;
 }
 
+.error-text {
+  color: red;
+}
+
 .main__top__registracion {
   display: flex;
   align-items: center;
@@ -24,6 +28,9 @@ body {
 .main__registration {
   display: flex;
   gap: 128px;
+}
+.main__registration .error {
+  color: rgb(241, 109, 127);
 }
 .main__registration .main__address .main__user {
   display: flex;
@@ -79,6 +86,7 @@ body {
   display: flex;
   flex-direction: column;
   margin-left: 230px;
+  gap: 20px;
 }
 .main__registration .main__address .main__details__title {
   color: rgb(34, 34, 34);
@@ -89,7 +97,6 @@ body {
   width: 360px;
   height: 45px;
   padding-left: 10px;
-  margin-top: 20px;
   color: rgb(177, 177, 177);
   font-size: 13px;
   font-weight: 300;

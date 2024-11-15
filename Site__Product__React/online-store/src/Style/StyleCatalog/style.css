@@ -9,6 +9,10 @@ body {
   overflow-x: hidden;
 }
 
+.main__product {
+  padding-bottom: 128px;
+}
+
 .main__top {
   display: flex;
   align-items: center;
@@ -184,8 +188,10 @@ body {
   gap: 30px;
   justify-content: center;
   margin-top: 0;
-  margin-bottom: 0;
   transition: box-shadow 0.3s ease;
+}
+.products__lists .list__bottom {
+  margin-bottom: 128px;
 }
 .products__items {
   background: rgb(248, 248, 248);

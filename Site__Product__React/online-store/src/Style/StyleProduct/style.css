@@ -19,6 +19,7 @@ body {
   display: flex;
   justify-content: center;
   padding-top: 11px;
+  margin-bottom: 664px;
 }
 .products__info__img {
   height: 724px;

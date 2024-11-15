@@ -12,6 +12,10 @@ body {
   overflow-x: hidden;
 }
 
+.error-text {
+  color: red;
+}
+
 .main {
   &__top__registracion {
     display: flex;
@@ -30,6 +34,10 @@ body {
   &__registration {
     display: flex;
     gap: 128px;
+
+    .error {
+      color: $pinkColor;
+    }
 
     .main__address {
       .main__user {
@@ -87,6 +95,7 @@ body {
         display: flex;
         flex-direction: column;
         margin-left: 230px;
+        gap: 20px;
 
         &__title {
           color: rgb(34, 34, 34);
@@ -98,7 +107,6 @@ body {
           width: 360px;
           height: 45px;
           padding-left: 10px;
-          margin-top: 20px;
           color: rgb(177, 177, 177);
           font-size: 13px;
           font-weight: 300;

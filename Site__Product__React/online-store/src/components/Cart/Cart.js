@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useCart } from "./CartContext";
+import { Link } from 'react-router-dom';
 
 function Cart() {
   const { cart, updateCart } = useCart();
@@ -22,6 +23,11 @@ function Cart() {
     setProducts(updatedProducts);
     updateCart(updatedProducts);
   };
+
+  const handleClearCart = () => {
+    setProducts([]);  // Очищаем локальное состояние корзины
+    updateCart([]);
+  }
 
   return (
     <div className="cart">
@@ -68,8 +74,8 @@ function Cart() {
             </div>
           ))}
           <div className="cart__product__button">
-            <button className="cart__product__button__clear cart__product__button_size">CLEAR SHOPPING CART</button>
-            <button className="cart__product__button__continue cart__product__button_size">CONTINUE SHOPPING</button>
+            <button className="cart__product__button__clear cart__product__button_size" onClick={handleClearCart}>CLEAR SHOPPING CART</button>
+            <Link to="/catalog" className="cart__product__button__continue cart__product__button_size">CONTINUE SHOPPING</Link>
           </div>
         </div>
       )}

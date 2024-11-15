@@ -1,11 +1,6 @@
-import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 function ProductsInfo() {
-
-  useEffect(() => {
-    window.scrollTo(0, 0); // Устанавливает положение на верх страницы
-  }, []);
 
   const location = useLocation();
   const { product } = location.state;

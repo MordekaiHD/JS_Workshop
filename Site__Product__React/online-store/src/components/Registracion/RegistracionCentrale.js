@@ -36,13 +36,13 @@ function RegistracionCentrale() {
     }
 
     if (!formData.password.match(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/)) {
-      newErrors.password =
-        "Password must be at least 8 characters with at least 1 number, 1 uppercase and 1 lowercase letter.";
+      newErrors.password = true;
     }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -81,26 +81,37 @@ function RegistracionCentrale() {
             <input
               type="radio"
               name="gender"
+              value="male"
               className="main__user__checkbox__input"
               id="checkbox1"
-              required
+              onChange={handleChange}
+              checked={formData.gender === "male"}
             />
             <label htmlFor="checkbox1" className="main__user__checkbox__label1">Male</label>
+
             <input
               type="radio"
               name="gender"
+              value="female"
               className="main__user__checkbox__input main__user__checkbox__input_right"
               id="checkbox2"
+              onChange={handleChange}
+              checked={formData.gender === "female"}
             />
             <label htmlFor="checkbox2" className="main__user__checkbox__label2">Female</label>
+
             <input
               type="radio"
               name="gender"
+              value="other"
               className="main__user__checkbox__input main__user__checkbox__input_right"
               id="checkbox3"
+              onChange={handleChange}
+              checked={formData.gender === "other"}
             />
             <label htmlFor="checkbox3" className="main__user__checkbox__label2">Other</label>
           </div>
+
           {errors.gender && <p className="error">{errors.gender}</p>}
         </div>
 
@@ -125,13 +136,16 @@ function RegistracionCentrale() {
             onChange={handleChange}
             className="main__details__input"
           />
-          <p className="main__details__text">
+          <p
+            className="main__details__text"
+            style={errors.password ? { color: "red" } : {}}
+          >
             Please use 8 or more characters, with at least 1 number and a mixture of uppercase and lowercase letters
           </p>
           {errors.password && <p className="error">{errors.password}</p>}
         </div>
 
-        <button type="button" className="main__button">
+        <button type="submit" className="main__button">
           JOIN NOW
           <svg width="17.000977" height="9.918610" viewBox="0 0 17.001 9.91861" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path

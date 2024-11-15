@@ -12,6 +12,11 @@ body {
   overflow-x: hidden;
 }
 
+.main__product {
+  padding-bottom: 128px;
+
+}
+
 .main {
   &__top {
     display: flex;
@@ -222,8 +227,11 @@ body {
     gap: 30px;
     justify-content: center;
     margin-top: 0;
-    margin-bottom: 0;
     transition: box-shadow 0.3s ease;
+
+    .list__bottom {
+      margin-bottom: 128px;
+    }
   }
 
   &__items {

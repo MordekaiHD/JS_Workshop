@@ -206,6 +206,10 @@ body {
   font-size: 16px;
   font-weight: 400;
   transition: all 0.5s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .products__button:hover {
   border: 1px solid rgb(255, 106, 106);
